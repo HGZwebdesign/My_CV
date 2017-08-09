@@ -28,12 +28,6 @@ $position: -0.5%, 8%, 16.2%, 24.4%, 33%, 41%, 50%, 58%, 66.8%, 75%, 83.5%, 91.6%
       background-color: $c1;
       box-shadow: 0 0 35px 0 $shadow;
 
-      span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
     }
     @for $i from 1 through $numberOfSkills {
       .skill:nth-child(#{$i+2}) {
