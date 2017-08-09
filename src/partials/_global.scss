@@ -8,7 +8,7 @@ $width-base: (100%/$cols);
 $medium_screen: 1000px;
 
 html {
-  font-size: 25px;
+  font-size: 28px;
 }
 
 body {
@@ -35,14 +35,13 @@ body {
   min-height: 1px;
 }
 @media only screen and (min-width: $medium_screen) {
-   @for $i from 1 through $cols{
+  html {
+    font-size: 16px;
+  }
+  @for $i from 1 through $cols {
     .col-#{$i} {
       width: $width-base * $i;
     }
-  }
-
-  html {
-    font-size: 16px;
   }
 }
 /**
