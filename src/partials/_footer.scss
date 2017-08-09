@@ -1,0 +1,82 @@
+/**
+ * -----------------------------------------------------------------------
+ *                                  Footer
+ * -----------------------------------------------------------------------
+ */
+.footer {
+  background-color: $c2;
+  // box-shadow: 0 -10px 20px 0 $shadow;
+  color: $c1;
+  font-size: 1.2rem;
+
+  .container.flex {
+    padding: 0.5rem;
+
+      &>div {
+        padding: 0.5rem 0;
+      }
+
+    .title {
+      font-weight: bold;
+    }
+
+    .copyright {}
+
+    .links.flex {
+      & > div {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 0.3rem;
+        background-color: $c1;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 50%;
+
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .github {
+        /*Github logo" designed by SimpleIcon from Flaticon*/
+        background-image: url("../dist/images/github-logo.svg");
+        background-size: 90%;
+      }
+
+      .linkedin {
+        /*linkedin logo" designed by SimpleIcon from Flaticon*/
+        background-image: url("../dist/images/linkedin-logo.svg");
+        background-size: 60%;
+      }
+
+      .cvPdf {
+        color: $c2;
+        font-size: 1.2rem;
+        font-weight: bold;
+        line-height: 2.6rem;
+      }
+
+      .email {
+        color: $c2;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 2.4rem;
+      }
+    }
+
+    .title {}
+
+    .copyright {}
+  }
+
+}
+@media only screen and (min-width: $medium_screen) {
+  .footer .container.flex {
+    .links.flex {
+      order: -1;
+    }
+
+  }
+}

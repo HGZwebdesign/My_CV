@@ -1,0 +1,63 @@
+/**
+ * -----------------------------------------------------------------------
+ *                           Global grid settings
+ * -----------------------------------------------------------------------
+ */
+$cols: 12;
+$width-base: (100%/$cols);
+$medium_screen: 800px;
+
+body {
+  background: $c5;
+}
+
+.container {
+  position: relative;
+  max-width: 70rem;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+[class*='col-'] {
+  width: 100%;
+  min-height: 1px;
+}
+@media only screen and (min-width: $medium_screen) {
+   @for $i from 1 through $cols{
+    .col-#{$i} {
+      width: $width-base * $i;
+    }
+  }
+}
+/**
+ * -----------------------------------------------------------------------
+ *                         global sections settings
+ * -----------------------------------------------------------------------
+ */
+.hidden {
+  display: none;
+}
+
+h3 {
+  padding: 2rem 0 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h4 {
+  padding: 0 0 2rem;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+* {
+  // border: 0.1px solid #3EBA70;
+}

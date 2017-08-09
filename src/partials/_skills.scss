@@ -1,0 +1,47 @@
+/**
+ * -----------------------------------------------------------------------
+ *                                  skills
+ * -----------------------------------------------------------------------
+ */
+$numberOfSkills: 13;
+$position: -0.5%, 8%, 16.2%, 24.4%, 33%, 41%, 50%, 58%, 66.8%, 75%, 83.5%, 91.6%, 100.2%;
+
+.skills {
+  // /*"More bubbles" designed by tom_bullock from Flickr*/
+  // background-image: url('../dist/images/bubbles2.jpg');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: 0 40%;
+  // background-attachment: fixed;
+  // background-color: $c5;
+  // box-shadow: 0 0 40px 0 $shadow;
+  color: $c1;
+
+  .container.flex {
+    padding: 1rem 1rem 3rem;
+
+    .skill {
+      position: relative;
+      margin: 1rem;
+      width: 6rem;
+      height: 6rem;
+      background-color: $c1;
+      box-shadow: 0 0 35px 0 $shadow;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    @for $i from 1 through $numberOfSkills {
+      .skill:nth-child(#{$i+2}) {
+        background-image: url("../dist/images/set_color.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: nth($position, $i);
+      }
+    }
+  }
+}
