@@ -5,7 +5,11 @@
  */
 $cols: 12;
 $width-base: (100%/$cols);
-$medium_screen: 1800px;
+$medium_screen: 1000px;
+
+html {
+  font-size: 25px;
+}
 
 body {
   background: $c5;
@@ -35,6 +39,10 @@ body {
     .col-#{$i} {
       width: $width-base * $i;
     }
+  }
+
+  html {
+    font-size: 16px;
   }
 }
 /**
