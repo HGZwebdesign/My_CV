@@ -75,14 +75,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const project = $('.project');
   const plus_link = $('.plus_link');
 
-
   // Event: Scroll to links
 
   $(document).on("click", ".nav a", function (event) {
     event.preventDefault();
-    $('html, body').animate({
-      scrollTop: $('.' + $(this).attr('href')).offset().top
-    }, 1000);
+    nav.addClass('hidden')
+    setTimeout(() => {
+      $('html, body').animate({
+        scrollTop: $('.' + $(this).attr('href')).offset().top
+      }, 1000);
+    }, 1);
   });
 
   // Functions: add/remove class hidden of navbar sections

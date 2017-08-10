@@ -22,14 +22,10 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
       box-shadow: 5px 6px 14px 0 rgba(106, 106, 106, 0.70);
 
       .board.flex {
-        padding: 4rem 0.5rem;
+        padding: 2rem 0.5rem;
         background-color: rgba($c5, 0.8);
         color: $c1;
         text-align: center;
-
-        & > div {
-          // display: inline-block;
-        }
 
         h5 {
           font-size: 1.5rem;
