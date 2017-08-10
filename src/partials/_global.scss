@@ -8,7 +8,7 @@ $width-base: (100%/$cols);
 $medium_screen: 1000px;
 
 html {
-  font-size: 28px;
+  font-size: 32px;
 }
 
 body {
@@ -36,7 +36,7 @@ body {
 }
 @media only screen and (min-width: $medium_screen) {
   html {
-    font-size: 16px;
+    font-size: inherit;
   }
   @for $i from 1 through $cols {
     .col-#{$i} {
@@ -51,6 +51,15 @@ body {
  */
 .hidden {
   display: none;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
 }
 
 h3 {

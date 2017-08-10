@@ -10,23 +10,29 @@
   background-repeat: no-repeat;
   background-position: 0 40%;
   // box-shadow: 0 10px 20px 0 $shadow;
-  z-index: 0;
-
+  //
   .container.flex {
     color: $c1;
+    padding: 15rem 1rem;
 
-    h1 {
-      padding: 15rem 0 1rem;
-      font-size: 3.5rem;
-    }
+    .title {
+      border-radius: 10px 10px 0 0;
+      border-radius: 10px ;
+      background-color: rgba($c2, 0.5);
 
-    h4 {
-      padding: 0 0 1rem;
-      font-size: 1.5rem;
+      h1 {
+        padding: 1rem;
+      }
+
+      h2 {
+        padding: 0 0 1rem;
+      }
     }
 
     .links {
-      padding: 0 0 15rem;
+      padding: 2rem 0 1rem;
+      // border-radius: 0 0 10px 10px;
+      // background-color: rgba($c2, 0.3);
 
       & > div {
         width: 2.5rem;

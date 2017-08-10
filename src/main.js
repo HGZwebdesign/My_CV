@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Functions: add/remove classes of navbar sections
 
-  $(document).on("click", ".hamburger", function (event) {
+  $(document).on("click", ".hamburger a", function (event) {
 
     nav.toggleClass('hidden');
   });

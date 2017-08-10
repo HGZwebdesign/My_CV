@@ -9,13 +9,13 @@
   .container.flex {
     justify-content: flex-start;
     color: $c1;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 
     .title {
-      width: 90%;
+      width: 85%;
       font-weight: bold;
       text-align: left;
-      padding: 1rem 0.5rem;
+      padding: 1em 0.5em;
     }
 
     .nav {
@@ -26,7 +26,7 @@
       }
 
       a {
-        padding: 0.5rem;
+        padding: 0.5em 0;
         display: inline-block;
         width: 100%;
         height: 100%;
@@ -35,23 +35,32 @@
     }
 
     .hamburger {
-      width: 10%;
+      position: relative;
+      width: 15%;
       height: 100%;
       flex-grow: 1;
-      display: block;
-      padding: 1.5rem 0;
+      padding: 1em;
       /*"Menu" designed by Freepik from Flaticon*/
       background-image: url('../dist/images/hamburger.svg');
       background-position: center;
-      background-size: 1.6rem 1.6rem;
+      background-size: 1.6em 1.6em;
       background-repeat: no-repeat;
+
+      a {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
 @media only screen and (min-width: $medium_screen) {
   .navbar .container.flex {
     .title {
-      width: 50%;
+      width: 35%;
     }
 
     .nav {

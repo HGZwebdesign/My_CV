@@ -4,7 +4,7 @@
  * -----------------------------------------------------------------------
  */
 .footer {
-  background-color: $c2;
+  background-color: $c3;
   // box-shadow: 0 -10px 20px 0 $shadow;
   color: $c1;
   font-size: 1.2rem;
@@ -12,17 +12,26 @@
   .container.flex {
     padding: 0.5rem;
 
-      &>div {
-        padding: 0.5rem 0;
+    & > div {
+      padding: 0.5rem 0.5rem;
+    }
+
+    .contact.flex {
+      & > div {
+        line-height: 1.5em;
       }
 
-    .title {
+      .title {
+        font-weight: bold;
+      }
+    }
+
+    .copyright {
       font-weight: bold;
     }
 
-    .copyright {}
-
     .links.flex {
+      justify-content: center;;
       & > div {
         width: 2.5rem;
         height: 2.5rem;
@@ -66,17 +75,19 @@
       }
     }
 
-    .title {}
 
-    .copyright {}
   }
-
 }
 @media only screen and (min-width: $medium_screen) {
   .footer .container.flex {
     .links.flex {
-      order: -1;
+      order: 1;
+        justify-content: flex-end;
     }
 
+    .contact.flex {
+      order: -1;
+      text-align: left;
+    }
   }
 }
