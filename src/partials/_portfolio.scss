@@ -12,27 +12,23 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
 
   .container.flex {
     align-items: stretch;
-    padding: 1rem 0 3rem;
+    padding: 1rem 0 5rem;
 
     .project {
       align-items: stretch;
-      height: 15rem;
-      width: 15rem;
+      height: 13rem;
+      width: 13rem;
       margin: 1rem;
       box-shadow: 5px 6px 14px 0 rgba(106, 106, 106, 0.70);
 
-      &:hover .board{
-        display: inline-block;;
-      }
-
-      .board {
-        display: none;
+      .board.flex {
         padding: 4rem 0.5rem;
         background-color: rgba($c5, 0.8);
         color: $c1;
+        text-align: center;
 
         & > div {
-          display: inline-block;
+          // display: inline-block;
         }
 
         h5 {
@@ -40,10 +36,9 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
           font-weight: bold;
         }
 
-        .linkGithub,
-        .linkWebsite {
-          width: 3rem;
-          height: 3rem;
+        .link {
+          width: 2.5rem;
+          height: 2.5rem;
           margin: 1rem 0.5rem;
           background-color: $c1;
           background-repeat: no-repeat;
@@ -54,6 +49,29 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
             display: block;
             width: 100%;
             height: 100%;
+          }
+        }
+
+        .plus_link {
+          position: relative;
+
+          .plus {
+            &:after,
+            &:before {
+              position: absolute;
+              content: "";
+              width: 1.8em;
+              height: 0.2em;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%,-50%);
+              border-radius: 20%;
+              background-color: $c5;
+            }
+
+            &:after {
+              transform: translate(-50%,-50%) rotate(90deg);
+            }
           }
         }
 
