@@ -4,11 +4,16 @@
  * -----------------------------------------------------------------------
  */
 $projects: 4;
+$projectBoxSize: 16rem;
+$circleSize: 3.5rem;
 $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
 
 .portfolio {
+  position: relative;
   background-color: $c1;
-  box-shadow: 0 0 35px 0 $shadow;
+  // box-shadow: 0 0 35px 0 $shadow;
+  @include skewedBorderUp;
+  @include skewedBorderDown ($c1, transparent);
 
   .container.flex {
     align-items: stretch;
@@ -16,8 +21,8 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
 
     .project {
       align-items: stretch;
-      height: 13rem;
-      width: 13rem;
+      height: $projectBoxSize;
+      width: $projectBoxSize;
       margin: 1rem;
       box-shadow: 5px 6px 14px 0 rgba(106, 106, 106, 0.70);
 
@@ -28,13 +33,13 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
         text-align: center;
 
         h5 {
-          font-size: 1.5rem;
+          font-size: 2.2rem;
           font-weight: bold;
         }
 
         .link {
-          width: 2.5rem;
-          height: 2.5rem;
+          width: $circleSize;
+          height: $circleSize;
           margin: 1rem 0.5rem;
           background-color: $c1;
           background-repeat: no-repeat;
@@ -56,8 +61,8 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
             &:before {
               position: absolute;
               content: "";
-              width: 1.8em;
-              height: 0.2em;
+              width: 70%;
+              height: 9%;
               left: 50%;
               top: 50%;
               transform: translate(-50%,-50%);
