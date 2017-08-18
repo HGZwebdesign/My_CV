@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.addClass('hidden')
     setTimeout(() => {
       $('html, body').animate({
-        scrollTop: $('.' + $(this).attr('href')).offset().top
+        scrollTop: $('.' + $(this).attr('href')).offset().top - 25
       }, 1000);
     }, 1);
   });

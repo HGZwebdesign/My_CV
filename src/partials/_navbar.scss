@@ -4,10 +4,16 @@
  * -----------------------------------------------------------------------
  */
 .navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: $c2;
+  z-index: 999;
 
   .container.flex {
     justify-content: flex-start;
+    max-width: 80rem;
     color: $c1;
     font-size: 1.5rem;
 
