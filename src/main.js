@@ -1,16 +1,16 @@
 $(document).ready(() => {
   console.log("JS ready...");
 
-  const nav = $('.nav');
-  const hamburger = $('.hamburger');
+  const navbarLink = $('.nav a');
+  const hamburgerLink = $('.hamburger a');
   const project = $('.project');
-  const plus_link = $('.plus_link');
+  const plusLink = $('.plus-link a');
 
   // Event: Scroll to links
 
-  $(document).on("click", ".nav a", function (event) {
-    event.preventDefault();
-    nav.addClass('hidden')
+  navbarLink.on("click", function (e) {
+    e.preventDefault();
+    navbarLink.parent().addClass('hidden')
     setTimeout(() => {
       $('html, body').animate({
         scrollTop: $('.' + $(this).attr('href')).offset().top - 25
@@ -20,26 +20,26 @@ $(document).ready(() => {
 
   // Functions: add/remove class hidden of navbar sections
 
-  $(document).on("click", ".hamburger a", function (event) {
-    event.preventDefault();
-    nav.toggleClass('hidden');
+  hamburgerLink.on("click", function (e) {
+    e.preventDefault();
+    navbarLink.parent().toggleClass('hidden');
   });
 
   // Functions: add/remove class hidden of board elements
 
-  $(document).on("mouseover", ".project", function (event) {
-    event.preventDefault();
+  project.on("mouseover", function (e) {
+    e.preventDefault();
     $(this).find(".board").removeClass('hidden');
   });
 
-  $(document).on("mouseleave", ".project", function (event) {
-    event.preventDefault();
-    $(this).find(".board").addClass('hidden').find('.link').addClass('hidden').parent().find('.plus_link').removeClass('hidden');
+  project.on("mouseleave", function (e) {
+    e.preventDefault();
+    $(this).find(".board").addClass('hidden').find('.link').addClass('hidden').parent().find('.plus-link').removeClass('hidden');
   });
 
-  $(document).on("click", ".plus_link a", function (event) {
-    event.preventDefault();
-    $(this).parent().addClass('hidden').parent().find('.link').not('.plus_link').removeClass('hidden');
+  plusLink.on("click", function (e) {
+    e.preventDefault();
+    $(this).parent().addClass('hidden').parent().find('.link').not('.plus-link').removeClass('hidden');
   });
 
 })
