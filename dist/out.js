@@ -67,7 +67,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-document.addEventListener("DOMContentLoaded", () => {
+$(document).ready(() => {
   console.log("JS ready...");
 
   const nav = $('.nav');

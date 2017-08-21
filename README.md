@@ -1,6 +1,6 @@
-# My CV
+# Portfolio
 
-**Link:** https://hgzwebdesign.github.io/myCV
+**Link:** https://hgzwebdesign.github.io/Portfolio
 
 The introduction website containing my CV and portfolio.
 
