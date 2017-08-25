@@ -5,7 +5,7 @@
  */
 $cols: 12;
 $width-base: (100%/$cols);
-$small_screen: 400px;
+$small_screen: 460px;
 $medium_screen: 800px;
 
 body {
@@ -78,7 +78,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 @media only screen and (min-width: $small_screen) {
