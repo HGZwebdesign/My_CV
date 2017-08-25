@@ -67,7 +67,52 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-$(document).ready(function(){console.log('JS ready...');var a=$('.nav a'),b=$('.hamburger a'),c=$('.project'),d=$('.plus-link a');a.on('click',function(b){var c=this;b.preventDefault(),a.parent().addClass('hidden'),setTimeout(function(){$('html, body').animate({scrollTop:$('.'+$(c).attr('href')).offset().top-25},1e3)},1)}),b.on('click',function(b){b.preventDefault(),a.parent().toggleClass('hidden')}),c.on('mouseover',function(a){a.preventDefault(),$(this).find('.board').removeClass('hidden')}),c.on('mouseleave',function(a){a.preventDefault(),$(this).find('.board').addClass('hidden').find('.link').addClass('hidden').parent().find('.plus-link').removeClass('hidden')}),d.on('click',function(a){a.preventDefault(),$(this).parent().addClass('hidden').parent().find('.link').not('.plus-link').removeClass('hidden')})});
+$(document).ready(function () {
+  console.log("JS ready...");
+
+  var navbarLink = $('.nav a');
+  var hamburgerLink = $('.hamburger a');
+  var project = $('.project');
+  var plusLink = $('.plus-link a');
+
+  // Event: Scroll to links
+
+  navbarLink.on("click", function (e) {
+    var _this = this;
+
+    e.preventDefault();
+    navbarLink.parent().addClass('hidden');
+    setTimeout(function () {
+      $('html, body').animate({
+        scrollTop: $('.' + $(_this).attr('href')).offset().top - 25
+      }, 1000);
+    }, 1);
+  });
+
+  // Functions: add/remove class hidden of navbar sections
+
+  hamburgerLink.on("click", function (e) {
+    e.preventDefault();
+    navbarLink.parent().toggleClass('hidden');
+  });
+
+  // Functions: add/remove class hidden of board elements
+
+  project.on("mouseover", function (e) {
+    e.preventDefault();
+    $(this).find(".board").removeClass('hidden');
+  });
+
+  project.on("mouseleave", function (e) {
+    e.preventDefault();
+    $(this).find(".board").addClass('hidden').find('.link').addClass('hidden').parent().find('.plus-link').removeClass('hidden');
+  });
+
+  plusLink.on("click", function (e) {
+    e.preventDefault();
+    $(this).parent().addClass('hidden').parent().find('.link').not('.plus-link').removeClass('hidden');
+  });
+});
 
 /***/ })
 /******/ ]);
