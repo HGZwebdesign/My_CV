@@ -5,9 +5,16 @@
  */
 .navbar {
   background-color: $c2;
-  // box-shadow: 0 0 10px 0 rgba(102, 102, 102, 1);
+  // overflow: hidden;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // z-index: 999;
+
   .container.flex {
     justify-content: flex-start;
+    max-width: 80rem;
     color: $c1;
     font-size: 1.5rem;
 
@@ -15,7 +22,7 @@
       width: 85%;
       font-weight: bold;
       text-align: left;
-      padding: 1em 0.5em;
+      padding: 0.7em 0.5em;
     }
 
     .nav {

@@ -4,8 +4,10 @@
  * -----------------------------------------------------------------------
  */
 .about {
+  position: relative;
   background-color: $c1;
-  box-shadow: 0 0 35px 0 $shadow;
+  @include skewedBorderUp;
+  @include skewedBorderDown;
 
   .container.flex {
     padding: 1rem 1rem 3rem;
@@ -16,20 +18,20 @@
 
     .text p {
       text-align: left;
-      padding: 0.5rem 1rem;
-      font-size: 1.1rem;
+      padding: 0.5rem 2rem;
+      font-size: 1.2rem;
       line-height: 1.5em;
 
       &:first-child {
-         padding-top: 1rem;
-       }
-     &:last-child {
+        padding-top: 1rem;
+      }
+
+      &:last-child {
         padding-bottom: 1rem;
       }
     }
 
     .image.flex {
-      // padding: 0 1rem 2rem 2rem;
       position: relative;
 
       img {

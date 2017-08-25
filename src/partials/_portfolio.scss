@@ -4,46 +4,41 @@
  * -----------------------------------------------------------------------
  */
 $projects: 4;
+$projectBoxSize: 16rem;
+$circleSize: 3.5rem;
 $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
 
 .portfolio {
+  position: relative;
   background-color: $c1;
-  box-shadow: 0 0 35px 0 $shadow;
+  @include skewedBorderUp;
+  @include skewedBorderDown ($c1, transparent);
 
   .container.flex {
     align-items: stretch;
-    padding: 1rem 0 3rem;
+    padding: 1rem 0 5rem;
 
     .project {
       align-items: stretch;
-      height: 15rem;
-      width: 15rem;
+      height: $projectBoxSize;
+      width: $projectBoxSize;
       margin: 1rem;
       box-shadow: 5px 6px 14px 0 rgba(106, 106, 106, 0.70);
 
-      &:hover .board{
-        display: inline-block;;
-      }
-
-      .board {
-        display: none;
-        padding: 4rem 0.5rem;
+      .board.flex {
+        padding: 2rem 0.5rem;
         background-color: rgba($c5, 0.8);
         color: $c1;
-
-        & > div {
-          display: inline-block;
-        }
+        text-align: center;
 
         h5 {
-          font-size: 1.5rem;
+          font-size: 2.2rem;
           font-weight: bold;
         }
 
-        .linkGithub,
-        .linkWebsite {
-          width: 3rem;
-          height: 3rem;
+        .link {
+          width: $circleSize;
+          height: $circleSize;
           margin: 1rem 0.5rem;
           background-color: $c1;
           background-repeat: no-repeat;
@@ -54,6 +49,29 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
             display: block;
             width: 100%;
             height: 100%;
+          }
+        }
+
+        .plus-link {
+          position: relative;
+
+          .plus {
+            &:after,
+            &:before {
+              position: absolute;
+              content: "";
+              width: 70%;
+              height: 9%;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%,-50%);
+              border-radius: 20%;
+              background-color: $c5;
+            }
+
+            &:after {
+              transform: translate(-50%,-50%) rotate(90deg);
+            }
           }
         }
 
