@@ -12,7 +12,7 @@
 
   .container.flex {
     color: $c1;
-    padding: 15rem 1rem;
+    padding: 7rem 1rem;
 
     .title {
       border-radius: 10px 10px 0 0;
@@ -75,8 +75,18 @@
     }
   }
 }
+@media only screen and (min-width: $small_screen) {
+  .header {
+    .container.flex {
+      padding: 11rem 1rem;
+    }
+  }
+}
 @media only screen and (min-width: $medium_screen) {
   .header {
     background-attachment: fixed;
+    .container.flex {
+      padding: 15rem 1rem;
+    }
   }
 }

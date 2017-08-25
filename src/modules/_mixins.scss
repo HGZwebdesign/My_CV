@@ -5,7 +5,7 @@
  */
 
 $tightEnd: 100vw;
-$wideEnd: 2.5vw;
+$wideEnd: 3.5vw;
 $colorDefault1: $c1;
 $colorDefault2: rgba($c8, 0.7); //
 @mixin skewedBorderUp ($color1:$colorDefault1, $color2:$colorDefault2) {
