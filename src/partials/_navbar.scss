@@ -13,7 +13,7 @@
   z-index: 999;
 
   .container.flex {
-    justify-content: flex-start;
+    justify-content: space-around;
     max-width: 80rem;
     color: $c1;
 
@@ -25,7 +25,7 @@
 
     .nav {
       flex-grow: 1;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
 
       &:hover {
         color: $c8;
@@ -42,9 +42,9 @@
 
     .hamburger {
       position: relative;
-      width: 15%;
+      width: 10%;
       height: 100%;
-      flex-grow: 1;
+      font-size: 1.2rem;
       padding: 1em;
       /*"Menu" designed by Freepik from Flaticon*/
       background-image: url('../dist/images/hamburger.svg');
@@ -63,6 +63,13 @@
     }
   }
 }
+@media only screen and (min-width: $small_screen) {
+  .navbar .container.flex {
+    .nav {
+      font-size: 1.5rem;
+    }
+  }
+}
 @media only screen and (min-width: $medium_screen) {
   .navbar .container.flex {
     .title {
@@ -71,6 +78,7 @@
 
     .nav {
       display: block;
+      font-size: 1.2rem;
     }
 
     .hamburger {
