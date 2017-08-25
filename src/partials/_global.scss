@@ -5,11 +5,8 @@
  */
 $cols: 12;
 $width-base: (100%/$cols);
-$medium_screen: 1000px;
-
-html {
-  // font-size: 32px;
-}
+$small_screen: 400px;
+$medium_screen: 800px;
 
 body {
   background: $c5;
@@ -34,6 +31,7 @@ body {
   width: 100%;
   min-height: 1px;
 }
+@media only screen and (min-width: $small_screen) {}
 @media only screen and (min-width: $medium_screen) {
   html {
     font-size: inherit;
@@ -54,12 +52,12 @@ body {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 h3 {
@@ -74,6 +72,30 @@ h4 {
   font-style: italic;
 }
 
-* {
-  // border: 0.1px solid #3EBA70;
+h5 {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
+
+h6 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+@media only screen and (min-width: $small_screen) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 2.2rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: $medium_screen) {}
