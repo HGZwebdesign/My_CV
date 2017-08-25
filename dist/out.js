@@ -67,7 +67,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-$(document).ready(()=>{console.log('JS ready...');const a=$('.nav a'),b=$('.hamburger a'),c=$('.project'),d=$('.plus-link a');a.on('click',function(b){b.preventDefault(),a.parent().addClass('hidden'),setTimeout(()=>{$('html, body').animate({scrollTop:$('.'+$(this).attr('href')).offset().top-25},1e3)},1)}),b.on('click',function(b){b.preventDefault(),a.parent().toggleClass('hidden')}),c.on('mouseover',function(a){a.preventDefault(),$(this).find('.board').removeClass('hidden')}),c.on('mouseleave',function(a){a.preventDefault(),$(this).find('.board').addClass('hidden').find('.link').addClass('hidden').parent().find('.plus-link').removeClass('hidden')}),d.on('click',function(a){a.preventDefault(),$(this).parent().addClass('hidden').parent().find('.link').not('.plus-link').removeClass('hidden')})});
+$(document).ready(function(){console.log('JS ready...');var a=$('.nav a'),b=$('.hamburger a'),c=$('.project'),d=$('.plus-link a');a.on('click',function(b){var c=this;b.preventDefault(),a.parent().addClass('hidden'),setTimeout(function(){$('html, body').animate({scrollTop:$('.'+$(c).attr('href')).offset().top-25},1e3)},1)}),b.on('click',function(b){b.preventDefault(),a.parent().toggleClass('hidden')}),c.on('mouseover',function(a){a.preventDefault(),$(this).find('.board').removeClass('hidden')}),c.on('mouseleave',function(a){a.preventDefault(),$(this).find('.board').addClass('hidden').find('.link').addClass('hidden').parent().find('.plus-link').removeClass('hidden')}),d.on('click',function(a){a.preventDefault(),$(this).parent().addClass('hidden').parent().find('.link').not('.plus-link').removeClass('hidden')})});
 
 /***/ })
 /******/ ]);
