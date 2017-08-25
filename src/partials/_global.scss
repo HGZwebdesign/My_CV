@@ -1,18 +1,18 @@
 /**
  * -----------------------------------------------------------------------
- *                    Global grid settings
+ *                           Global grid settings
  * -----------------------------------------------------------------------
  */
 $cols: 12;
 $width-base: (100%/$cols);
-$medium_screen: 800px;
+$medium_screen: 1000px;
 
 html {
   font-size: 32px;
 }
 
 body {
-  background: $c2;
+  background: $c5;
 }
 
 .container {
@@ -46,7 +46,7 @@ body {
 }
 /**
  * -----------------------------------------------------------------------
- *                 global sections settings
+ *                         global sections settings
  * -----------------------------------------------------------------------
  */
 .hidden {
@@ -54,50 +54,26 @@ body {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 h3 {
   padding: 2rem 0 1rem;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
 h4 {
   padding: 0 0 3rem;
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-style: italic;
 }
 
-h5 {
-  font-size: 2.2rem;
-  font-weight: bold;
-}
-
-h6 {
-  font-size: 1rem;
-  font-weight: bold;
-}
-@media only screen and (min-width: $medium_screen) {
-  h1 {
-    font-size: 3.5rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h6 {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-}
-
 * {
-  border: 1px solid #3EBA70;
+  // border: 0.1px solid #3EBA70;
 }

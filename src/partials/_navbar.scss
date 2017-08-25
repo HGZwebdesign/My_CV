@@ -16,33 +16,13 @@
     justify-content: flex-start;
     max-width: 80rem;
     color: $c1;
-
+    font-size: 1.5rem;
 
     .title {
-      max-width: 85%;
+      width: 85%;
+      font-weight: bold;
       text-align: left;
       padding: 0.7em 0.5em;
-    }
-
-    .hamburger {
-      position: relative;
-      max-width: 15%;
-      flex-grow: 1;
-      padding: 1.5rem 1rem;
-      /*"Menu" designed by Freepik from Flaticon*/
-      background-image: url('../dist/images/hamburger.svg');
-      background-position: center;
-      background-size: 1.6em 1.6em;
-      background-repeat: no-repeat;
-
-      a {
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
     }
 
     .nav {
@@ -61,7 +41,27 @@
       }
     }
 
+    .hamburger {
+      position: relative;
+      width: 15%;
+      height: 100%;
+      flex-grow: 1;
+      padding: 1em;
+      /*"Menu" designed by Freepik from Flaticon*/
+      background-image: url('../dist/images/hamburger.svg');
+      background-position: center;
+      background-size: 1.6em 1.6em;
+      background-repeat: no-repeat;
 
+      a {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 @media only screen and (min-width: $medium_screen) {
@@ -72,7 +72,6 @@
 
     .nav {
       display: block;
-      font-size: 1.5rem;
     }
 
     .hamburger {
