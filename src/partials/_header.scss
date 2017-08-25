@@ -8,15 +8,16 @@
   background-image: url('../dist/images/bubbles2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
-
+  background-position: 0 40%;
+  // box-shadow: 0 10px 20px 0 $shadow;
+  //
   .container.flex {
     color: $c1;
     padding: 15rem 1rem;
 
     .title {
       border-radius: 10px 10px 0 0;
-      border-radius: 10px;
+      border-radius: 10px ;
       background-color: rgba($c2, 0.5);
 
       h1 {
@@ -30,6 +31,8 @@
 
     .links {
       padding: 2rem 0 1rem;
+      // border-radius: 0 0 10px 10px;
+      // background-color: rgba($c2, 0.3);
 
       & > div {
         width: 2.5rem;

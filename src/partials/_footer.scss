@@ -5,14 +5,15 @@
  */
 .footer {
   background-color: $c3;
+  // box-shadow: 0 -10px 20px 0 $shadow;
   color: $c1;
   font-size: 1.2rem;
 
   .container.flex {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem;
 
     & > div {
-      padding: 0.5rem;
+      padding: 0.5rem 0.5rem;
     }
 
     .contact.flex {
@@ -79,13 +80,13 @@
 }
 @media only screen and (min-width: $medium_screen) {
   .footer .container.flex {
-    .copyright {
-      // order: 1;
-        text-align: right;
+    .links.flex {
+      order: 1;
+        justify-content: flex-end;
     }
 
     .contact.flex {
-      // order: -1;
+      order: -1;
       text-align: left;
     }
   }

@@ -4,13 +4,21 @@
  * -----------------------------------------------------------------------
  */
 $numberOfSkills: 13;
-$position: -0.3%, 8%, 16.5%, 24.7%, 33.1%, 41.2%, 50%, 58.4%, 66.8%, 74.9%, 83.5%, 91.7%, 100.2%;
+$position: -0.5%, 8%, 16.2%, 24.4%, 33%, 41%, 50%, 58%, 66.8%, 75%, 83.5%, 91.6%, 100.2%;
 
 .skills {
+  // /*"More bubbles" designed by tom_bullock from Flickr*/
+  // background-image: url('../dist/images/bubbles2.jpg');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: 0 40%;
+  // background-attachment: fixed;
+  // background-color: $c5;
+  // box-shadow: 0 0 40px 0 $shadow;
   color: $c1;
 
   .container.flex {
-    padding: 3rem 1rem 6rem;
+    padding: 1rem 1rem 3rem;
 
     .skill {
       position: relative;
@@ -19,6 +27,7 @@ $position: -0.3%, 8%, 16.5%, 24.7%, 33.1%, 41.2%, 50%, 58.4%, 66.8%, 74.9%, 83.5
       height: 6rem;
       background-color: $c1;
       box-shadow: 0 0 35px 0 $shadow;
+
     }
     @for $i from 1 through $numberOfSkills {
       .skill:nth-child(#{$i+2}) {
