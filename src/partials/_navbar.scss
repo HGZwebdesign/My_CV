@@ -16,17 +16,16 @@
     justify-content: flex-start;
     max-width: 80rem;
     color: $c1;
-    font-size: 1.5rem;
 
     .title {
       width: 80%;
-      font-weight: bold;
       text-align: left;
       padding: 0.7em 0.5em;
     }
 
     .nav {
       flex-grow: 1;
+      font-size: 1.2rem;
 
       &:hover {
         color: $c8;
