@@ -19,7 +19,7 @@
     .text p {
       text-align: left;
       padding: 0.5rem 2rem;
-      font-size: 1.2rem;
+      font-size: 1rem;
       line-height: 1.5em;
 
       &:first-child {
@@ -37,6 +37,21 @@
       img {
         box-shadow: 5px 6px 14px 0 rgba(106, 106, 106, 0.70);
         width: 60%;
+      }
+    }
+  }
+}
+// @media only screen and (min-width: $small_screen) {}
+@media only screen and (min-width: $medium_screen) {
+  .about {
+    @include skewedBorderUp ($wideEnd: 1.5vw);
+    @include skewedBorderDown ($wideEnd: 1.5vw);
+
+    .container.flex {
+      h3 {}
+
+      .text p {
+        font-size: 1.2rem;
       }
     }
   }

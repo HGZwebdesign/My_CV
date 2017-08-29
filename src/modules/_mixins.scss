@@ -3,12 +3,12 @@
  *                                  mixins
  * -----------------------------------------------------------------------
  */
-
-$tightEnd: 100vw;
-$wideEnd: 3.5vw;
+$tightEndDefault: 110vw;
+$wideEndDefault: 3.5vw;
 $colorDefault1: $c1;
 $colorDefault2: rgba($c8, 0.7); //
-@mixin skewedBorderUp ($color1:$colorDefault1, $color2:$colorDefault2) {
+//
+@mixin skewedBorderUp ($color1:$colorDefault1, $color2:$colorDefault2, $tightEnd: $tightEndDefault, $wideEnd: $wideEndDefault) {
   .skewUp {
     &:after,
     &:before {
@@ -35,7 +35,7 @@ $colorDefault2: rgba($c8, 0.7); //
     }
   }
 }
-@mixin skewedBorderDown ($color1:$colorDefault1, $color2:$colorDefault2) {
+@mixin skewedBorderDown ($color1:$colorDefault1, $color2:$colorDefault2, $tightEnd: $tightEndDefault, $wideEnd: $wideEndDefault) {
   .skewDown {
     &:after,
     &:before {
@@ -54,7 +54,7 @@ $colorDefault2: rgba($c8, 0.7); //
     }
 
     &:after {
-      top: calc(100% - 2px);;
+      top: calc(100% - 2px);
       right: 0;
       border-top: $wideEnd solid $color1;
       border-left: $tightEnd solid transparent;

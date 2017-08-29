@@ -12,7 +12,7 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
   position: relative;
   background-color: $c1;
   @include skewedBorderUp;
-  @include skewedBorderDown ($c1, transparent);
+  @include skewedBorderDown ($color2: transparent);
 
   .container.flex {
     align-items: stretch;
@@ -100,5 +100,12 @@ $images: "compass-xs.jpg", "calendar.jpg", "quotes.jpg", "template.jpg";
         background-position: top;
       }
     }
+  }
+}
+// @media only screen and (min-width: $small_screen) {}
+@media only screen and (min-width: $medium_screen) {
+  .portfolio {
+    @include skewedBorderUp ($wideEnd: 1.5vw);
+    @include skewedBorderDown ($color2: transparent, $wideEnd: 1.5vw);
   }
 }

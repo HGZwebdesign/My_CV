@@ -5,6 +5,17 @@ $(document).ready(() => {
   const hamburgerLink = $('.hamburger a');
   const project = $('.project');
   const plusLink = $('.plus-link a');
+  const myPhoto = $('.image img');
+
+  // $(window).scroll(() => {
+  //   let height = $(window).scrollTop();
+  //   // console.log(height);
+  //   if (height > 150) {
+  //     myPhoto.fadeIn('slow');
+  //   } else {
+  //     myPhoto.fadeOut();
+  //   }
+  // });
 
   // Event: Scroll to links
 
@@ -17,6 +28,8 @@ $(document).ready(() => {
       }, 1000);
     }, 1);
   });
+
+  console.log('dfsdf');
 
   // Functions: add/remove class hidden of navbar sections
 
