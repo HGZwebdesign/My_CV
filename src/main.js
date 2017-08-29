@@ -7,24 +7,6 @@ $(() => {
   const plusLink = $('.plus-link a');
   const toFadeIn = $('.toFadeIn');
 
-  // Event: elements fadeIn
-
-  $(window).scroll(() => {
-
-    toFadeIn.each((i) => {
-      let bottom_of_object = $(this).position().top + $(this).outerHeight();
-      let bottom_of_window = $(window).scrollTop() + $(window).height();
-
-      /* If the object is completely visible in the window, fade it it */
-      if (bottom_of_window > bottom_of_object) {
-        $(this).animate({
-          'opacity': '1'
-        }, 1500);
-      }
-
-    });
-  });
-
   // Event: Scroll to links
 
   navbarLink.on("click", function (e) {
@@ -59,6 +41,24 @@ $(() => {
   plusLink.on("click", function (e) {
     e.preventDefault();
     $(this).parent().addClass('hidden').parent().find('.link').not('.plus-link').removeClass('hidden');
+  });
+
+  // Event: elements fadeIn
+
+  $(window).scroll(() => {
+
+    toFadeIn.each(function (i) {
+      let bottom_of_window = $(window).scrollTop() + $(window).height();
+      let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+
+      // Element completely visible => fade in
+
+      if (bottom_of_window > bottom_of_object - 100) {
+        $(this).animate({
+          'opacity': '1'
+        }, 1500);
+      }
+    });
   });
 
 })
