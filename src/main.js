@@ -1,21 +1,29 @@
-$(document).ready(() => {
+$(() => {
   console.log("JS ready...");
 
   const navbarLink = $('.nav a');
   const hamburgerLink = $('.hamburger a');
   const project = $('.project');
   const plusLink = $('.plus-link a');
-  const myPhoto = $('.image img');
+  const toFadeIn = $('.toFadeIn');
 
-  // $(window).scroll(() => {
-  //   let height = $(window).scrollTop();
-  //   // console.log(height);
-  //   if (height > 150) {
-  //     myPhoto.fadeIn('slow');
-  //   } else {
-  //     myPhoto.fadeOut();
-  //   }
-  // });
+  // Event: elements fadeIn
+
+  $(window).scroll(() => {
+
+    toFadeIn.each((i) => {
+      let bottom_of_object = $(this).position().top + $(this).outerHeight();
+      let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+      /* If the object is completely visible in the window, fade it it */
+      if (bottom_of_window > bottom_of_object) {
+        $(this).animate({
+          'opacity': '1'
+        }, 1500);
+      }
+
+    });
+  });
 
   // Event: Scroll to links
 
@@ -28,8 +36,6 @@ $(document).ready(() => {
       }, 1000);
     }, 1);
   });
-
-  console.log('dfsdf');
 
   // Functions: add/remove class hidden of navbar sections
 
