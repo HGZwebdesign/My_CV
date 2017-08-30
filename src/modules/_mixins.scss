@@ -5,8 +5,10 @@
  */
 $tightEndDefault: 100vw;
 $wideEndDefault: 3.5vw;
-$colorDefault1: $c1;
-$colorDefault2: rgba($c8, 0.7); //
+// $colorDefault1: $c1;
+// $colorDefault2: rgba($c8, 0.7);
+$colorDefault1: yellow;
+$colorDefault2: red;//
 //
 @mixin skewedBorderUp ($color1:$colorDefault1, $color2:$colorDefault2, $tightEnd: $tightEndDefault, $wideEnd: $wideEndDefault) {
   .skewUp {
@@ -19,7 +21,7 @@ $colorDefault2: rgba($c8, 0.7); //
     }
 
     &:before {
-      top: calc(2px - #{$wideEnd});
+      top: calc(0.8px - #{$wideEnd});
       left: 0;
       border-bottom: $wideEnd solid $color1;
       border-right: $tightEnd solid transparent;
@@ -54,7 +56,7 @@ $colorDefault2: rgba($c8, 0.7); //
     }
 
     &:after {
-      top: calc(100% - 2px);
+      top: calc(100% - 0.8px);
       right: 0;
       border-top: $wideEnd solid $color1;
       border-left: $tightEnd solid transparent;
