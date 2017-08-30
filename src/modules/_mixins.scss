@@ -21,7 +21,7 @@ $colorDefault2: red;//
     }
 
     &:before {
-      top: calc(0.8px - #{$wideEnd});
+      top: calc(0.5px - #{$wideEnd});
       left: 0;
       border-bottom: $wideEnd solid $color1;
       border-right: $tightEnd solid transparent;
@@ -56,7 +56,7 @@ $colorDefault2: red;//
     }
 
     &:after {
-      top: calc(100% - 0.8px);
+      top: calc(100% - 0.5px);
       right: 0;
       border-top: $wideEnd solid $color1;
       border-left: $tightEnd solid transparent;
