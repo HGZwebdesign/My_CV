@@ -7,6 +7,7 @@ $cols: 12;
 $width-base: (100%/$cols);
 $small_screen: 460px;
 $medium_screen: 800px;
+$large_screen: 1920px;
 
 body {
   background: $c5;
@@ -33,15 +34,13 @@ body {
 }
 @media only screen and (min-width: $small_screen) {}
 @media only screen and (min-width: $medium_screen) {
-  html {
-    font-size: inherit;
-  }
-  @for $i from 1 through $cols {
+   @for $i from 1 through $cols{
     .col-#{$i} {
       width: $width-base * $i;
     }
   }
 }
+@media only screen and (min-width: $large_screen) {}
 /**
  * -----------------------------------------------------------------------
  *                         global sections settings
@@ -105,5 +104,30 @@ h6 {
 @media only screen and (min-width: $medium_screen) {
   h6 {
     font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: $large_screen) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+
+  h5 {
+    font-size: 2.5rem;
+  }
+
+  h6 {
+    font-size: 1.7rem;
   }
 }

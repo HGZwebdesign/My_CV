@@ -95,3 +95,31 @@
     }
   }
 }
+@media only screen and (min-width: $large_screen) {
+  .header {
+    background-attachment: fixed;
+
+    .container.flex {
+      padding: 15rem 1rem;
+
+      .links {
+        padding: 2rem 0 1rem;
+
+        & > div {
+          width: 3rem;
+          height: 3rem;
+        }
+
+        .cvPdf {
+          font-size: 1.8rem;
+          line-height: 3rem;
+        }
+
+        .email {
+          font-size: 1.8rem;
+          line-height: 3rem;
+        }
+      }
+    }
+  }
+}

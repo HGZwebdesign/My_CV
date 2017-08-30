@@ -1,13 +1,21 @@
 $(() => {
   console.log("JS ready...");
 
+  const navbar = $('.navbar');
   const navbarLink = $('.nav a');
   const hamburgerLink = $('.hamburger a');
   const project = $('.project');
   const plusLink = $('.plus-link a');
   const toFadeIn = $('.toFadeIn');
 
-  // Event: Scroll to links
+  let lastScrollTop = 0;
+  let step = 0;
+
+  /**
+ * -----------------------------------------------------------------------
+ *                          Event: Scroll to links
+ * -----------------------------------------------------------------------
+ */
 
   navbarLink.on("click", function (e) {
     e.preventDefault();
@@ -19,14 +27,53 @@ $(() => {
     }, 1);
   });
 
-  // Functions: add/remove class hidden of navbar sections
+  /**
+ * -----------------------------------------------------------------------
+ *                  Event: Navbar hiding on scrolling down
+ * -----------------------------------------------------------------------
+ */
+
+  $(window).on('scroll', function (e) {
+    currentScrollTop = $(this).scrollTop();
+    let lastPosition = Number(navbar.css('top').replace('px', ''));
+    let newPosition = (lastPosition - step / 4);
+
+    if (currentScrollTop < lastScrollTop) {
+      // console.log('scroll up');
+      newPosition = (newPosition < 0)
+        ? newPosition
+        : 0;
+
+    } else {
+      // console.log('scroll down');
+      navbarLink.parent().addClass('hidden');
+      newPosition = (-newPosition < navbar.outerHeight())
+        ? newPosition
+        : -navbar.outerHeight();
+    }
+
+    navbar.css('top', newPosition + 'px');
+    step = currentScrollTop - lastScrollTop;
+    lastScrollTop = currentScrollTop;
+
+  });
+
+  /**
+ * -----------------------------------------------------------------------
+ *            Events: add/remove class hidden of navbar sections
+ * -----------------------------------------------------------------------
+ */
 
   hamburgerLink.on("click", function (e) {
     e.preventDefault();
     navbarLink.parent().toggleClass('hidden');
   });
 
-  // Functions: add/remove class hidden of board elements
+  /**
+ * -----------------------------------------------------------------------
+ *            Events: add/remove class hidden of board elements
+ * -----------------------------------------------------------------------
+ */
 
   project.on("mouseover", function (e) {
     e.preventDefault();
@@ -43,7 +90,11 @@ $(() => {
     $(this).parent().addClass('hidden').parent().find('.link').not('.plus-link').removeClass('hidden');
   });
 
-  // Event: elements fadeIn
+  /**
+ * -----------------------------------------------------------------------
+ *                  Event: elements fadeIn on scrolling down
+ * -----------------------------------------------------------------------
+ */
 
   $(window).scroll(() => {
 
@@ -51,9 +102,7 @@ $(() => {
       let bottom_of_window = $(window).scrollTop() + $(window).height();
       let bottom_of_object = $(this).offset().top + $(this).outerHeight();
 
-      // Element completely visible => fade in
-
-      if (bottom_of_window > bottom_of_object - 100) {
+      if (bottom_of_window > bottom_of_object - 150) {
         $(this).animate({
           'opacity': '1'
         }, 1500);

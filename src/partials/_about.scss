@@ -18,8 +18,8 @@
 
     .text p {
       text-align: left;
-      padding: 0.5rem 2rem;
-      font-size: 1rem;
+      padding: 0.5rem;
+      font-size: 0.8rem;
       line-height: 1.5em;
 
       &:first-child {
@@ -37,21 +37,48 @@
       img {
         box-shadow: 5px 6px 14px 0 rgba(106, 106, 106, 0.70);
         width: 60%;
+        max-width: 300px;
       }
     }
   }
 }
-// @media only screen and (min-width: $small_screen) {}
+@media only screen and (min-width: $small_screen) {
+  .about {
+    .container.flex {
+      .text p {
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+      }
+
+      .image.flex {
+        img {
+          max-width: none;
+        }
+      }
+    }
+  }
+}
 @media only screen and (min-width: $medium_screen) {
   .about {
     @include skewedBorderUp ($wideEnd: 1.5vw);
     @include skewedBorderDown ($wideEnd: 1.5vw);
 
     .container.flex {
-      h3 {}
-
       .text p {
+        padding: 0.5rem 2rem;
         font-size: 1.2rem;
+      }
+    }
+  }
+}
+@media only screen and (min-width: $large_screen) {
+  .about {
+    @include skewedBorderUp ($wideEnd: 1vw);
+    @include skewedBorderDown ($wideEnd: 1vw);
+
+    .container.flex {
+      .text p {
+        font-size: 1.5rem;
       }
     }
   }
