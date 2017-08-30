@@ -47,13 +47,7 @@
     .container.flex {
       .text p {
         padding: 0.5rem 2rem;
-        font-size: 1rem;
-      }
-
-      .image.flex {
-        img {
-          max-width: none;
-        }
+        font-size: 1.2rem;
       }
     }
   }
@@ -67,6 +61,12 @@
       .text p {
         padding: 0.5rem 2rem;
         font-size: 1.2rem;
+      }
+
+      .image.flex {
+        img {
+          max-width: none;
+        }
       }
     }
   }

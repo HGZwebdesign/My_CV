@@ -52,10 +52,14 @@ $(() => {
         : -navbar.outerHeight();
     }
 
+    if ($(window).scrollTop() < 150) {
+      // console.log('top of the page area');
+      newPosition = 0;
+    }
+
     navbar.css('top', newPosition + 'px');
     step = currentScrollTop - lastScrollTop;
     lastScrollTop = currentScrollTop;
-
   });
 
   /**
