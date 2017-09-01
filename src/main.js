@@ -13,57 +13,6 @@ $(() => {
 
   /**
  * -----------------------------------------------------------------------
- *                          Event: Scroll to links
- * -----------------------------------------------------------------------
- */
-
-  navbarLink.on("click", function (e) {
-    e.preventDefault();
-    navbarLink.parent().addClass('hidden')
-    setTimeout(() => {
-      $('html, body').animate({
-        scrollTop: $('.' + $(this).attr('href')).offset().top - 25
-      }, 1000);
-    }, 1);
-  });
-
-  /**
- * -----------------------------------------------------------------------
- *                  Event: Navbar hiding on scrolling down
- * -----------------------------------------------------------------------
- */
-
-  $(window).on('scroll', function (e) {
-    currentScrollTop = $(this).scrollTop();
-    let lastPosition = Number(navbar.css('top').replace('px', ''));
-    let newPosition = (lastPosition - step / 4);
-
-    if (currentScrollTop < lastScrollTop) {
-      // console.log('scroll up');
-      newPosition = (newPosition < 0)
-        ? newPosition
-        : 0;
-
-    } else {
-      // console.log('scroll down');
-      navbarLink.parent().addClass('hidden');
-      newPosition = (-newPosition < navbar.outerHeight())
-        ? newPosition
-        : -navbar.outerHeight();
-    }
-
-    if ($(window).scrollTop() < 150) {
-      // console.log('top of the page area');
-      newPosition = 0;
-    }
-
-    navbar.css('top', newPosition + 'px');
-    step = currentScrollTop - lastScrollTop;
-    lastScrollTop = currentScrollTop;
-  });
-
-  /**
- * -----------------------------------------------------------------------
  *            Events: add/remove class hidden of navbar sections
  * -----------------------------------------------------------------------
  */
@@ -81,12 +30,35 @@ $(() => {
 
   project.on("mouseover", function (e) {
     e.preventDefault();
-    $(this).find(".board").removeClass('hidden');
+    let board = $(this).find(".board");
+
+    board.removeClass('hidden');
+
+    //
+    // board.animate({
+    //   opacity: 1
+    // }, 500, () => {
+    //   // board.removeClass('hidden');
+    // });
+
   });
 
   project.on("mouseleave", function (e) {
     e.preventDefault();
-    $(this).find(".board").addClass('hidden').find('.link').addClass('hidden').parent().find('.plus-link').removeClass('hidden');
+    let board = $(this).find(".board");
+
+    board.addClass('hidden').find('.link').addClass('hidden').parent().find('.plus-link').removeClass('hidden');
+
+    // board.animate({
+    //   opacity: 0
+    // }, '500', () => {
+    //     board.addClass('hidden').find('.link').addClass('hidden').parent().find('.plus-link').removeClass('hidden');
+    // });
+
+    // $(this).find(".board").slideUp('slow', () => {
+    //   $(this).find(".board").addClass('hidden').find('.link').addClass('hidden').parent().find('.plus-link').removeClass('hidden');
+    // });
+
   });
 
   plusLink.on("click", function (e) {
@@ -96,12 +68,63 @@ $(() => {
 
   /**
  * -----------------------------------------------------------------------
- *                  Event: elements fadeIn on scrolling down
+ *                          Event: Scroll to links
  * -----------------------------------------------------------------------
  */
 
-  $(window).scroll(() => {
+  navbarLink.on("click", function (e) {
+    e.preventDefault();
+    navbarLink.parent().addClass('hidden')
+    setTimeout(() => {
+      $('html, body').animate({
+        scrollTop: $('.' + $(this).attr('href')).offset().top - 25
+      }, 1000);
+    }, 1);
+  });
 
+  /**
+ * -----------------------------------------------------------------------
+ *                  Function: Navbar hiding on scrolling down
+ * -----------------------------------------------------------------------
+ */
+
+  const navbarOnScroll = (windowPosition) => {
+
+    currentScrollTop = windowPosition.scrollTop();
+    let lastPosition = Number(navbar.css('top').replace('px', ''));
+    let newPosition = (lastPosition - step / 4);
+
+    if (currentScrollTop < lastScrollTop) {
+      // console.log('scroll up');
+      newPosition = (newPosition < 0)
+        ? newPosition
+        : 0;
+
+    } else {
+      // console.log('scroll down');
+      navbarLink.parent().addClass('hidden');
+      newPosition = (-newPosition < navbar.outerHeight())
+        ? newPosition
+        : -navbar.outerHeight();
+    }
+
+    if (windowPosition.scrollTop() < 150) {
+      // console.log('top of the page area');
+      newPosition = 0;
+    }
+
+    navbar.css('top', newPosition + 'px');
+    step = currentScrollTop - lastScrollTop;
+    lastScrollTop = currentScrollTop;
+  }
+
+  /**
+ * -----------------------------------------------------------------------
+ *                  Function: elements fadeIn on scrolling down
+ * -----------------------------------------------------------------------
+ */
+
+  const fadeIn = (e) => {
     toFadeIn.each(function (i) {
       let bottom_of_window = $(window).scrollTop() + $(window).height();
       let bottom_of_object = $(this).offset().top + $(this).outerHeight();
@@ -112,6 +135,19 @@ $(() => {
         }, 1500);
       }
     });
+  }
+
+  /**
+ * -----------------------------------------------------------------------
+ *                        Events triggered on scroll
+ * -----------------------------------------------------------------------
+ */
+
+  fadeIn();
+
+  $(window).on('scroll', function (e) {
+    fadeIn();
+    navbarOnScroll($(this));
   });
 
 })
