@@ -1,12 +1,12 @@
-# My CV
+# My Curriculum Vitae
 
-**Link:** https://hgzwebdesign.github.io/myCV
+**Link:** https://hgzdev.github.io/my-CV
 
 My introduction website containing CV and portfolio.
 
 ## Technologies used in this project:
 - HTML5
-- CSS3 & SASS
 - JavaScript (ES6)
-- Gulp
+- React.js
+- Styled Components
 - Webpack
