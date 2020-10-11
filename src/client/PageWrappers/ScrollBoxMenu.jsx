@@ -3,7 +3,6 @@ import {useLocation} from 'react-router-dom'
 import {styled} from 'Styles'
 import {Box} from 'Components/Box'
 import {useMediaQuery} from 'plugins/MediaQuery'
-import {Link} from 'Components/Text'
 
 /* horizontal scroll: container must have defined width, noWrap on children and display: inline-block (no inline-flex === <Box inline/>) */
 const MenuBox = styled(Box)`
@@ -44,12 +43,12 @@ const ScrollBoxMenu = ({links}) => {
 		>
 			{links.map((link, i) => (
 				<BoxLinkWrap key={i} overflow={isPhone} inline>
-					<Link
+					<a
 						to={`/${link.destination}${location.search}`}
 						padding={isPhone ? '0 1rem 0 0 ' : '0.5rem'}
 					>
 						{link.label}
-					</Link>
+					</a>
 				</BoxLinkWrap>
 			))}
 		</MenuBox>

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, ContentBox} from 'Components/Box'
-import {Link, Text} from 'Components/Text'
+import {Text} from 'Components/Text'
 import {main, anti, Theme, headerTextTheme} from 'Styles'
 import {useLocation} from 'react-router-dom'
 import {useMediaQuery} from 'plugins/MediaQuery'
@@ -29,9 +29,9 @@ const links = [
 const Logo = () => {
 	const location = useLocation()
 	return (
-		<Link noRoute to={`/${location.search}`}>
+		<a to={`/${location.search}`}>
 			<Text set="mAntiBold">HGZ</Text>
-		</Link>
+		</a>
 	)
 }
 

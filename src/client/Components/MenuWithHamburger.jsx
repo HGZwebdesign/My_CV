@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Box} from 'Components/Box'
-import {Link, Text} from 'Components/Text'
+import {Text} from 'Components/Text'
 import {styled, css, main, anti} from 'Styles'
 import {useLocation} from 'react-router-dom'
 import {useMediaQuery} from 'plugins/MediaQuery'
@@ -86,16 +86,16 @@ const ListItem = ({path, label, links}) => {
 			}}
 		>
 			<Box gap spaceBetween>
-				<Link to={`/${path}${location.search}`} noRoute>
+				<a to={`/${path}${location.search}`}>
 					<Text set="mAnti">{label}</Text>
-				</Link>
+				</a>
 				{isPhone && links && (
 					<Box
 						{...{
 							right: true,
 							inline: true,
 							padding: '0.5rem',
-							as: Link,
+							as: 'a',
 							onClick: () => setOpen(!open),
 						}}
 					>

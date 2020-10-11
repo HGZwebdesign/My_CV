@@ -1,6 +1,5 @@
 import React from 'react'
 import {styled, css} from 'Styles'
-import {Link as LinkOrg} from 'react-router-dom'
 
 const Span = styled.span`
 	${p => p.theme.text?.css};
@@ -19,17 +18,3 @@ const Span = styled.span`
 `
 
 export const Text = p => <Span {...p} />
-
-// TODO noRoute is a hot fix - need for better solution
-export const Link = ({noRoute, to, ...p}) => (
-	<Text
-		set="link"
-		underlineOnHover
-		{...p}
-		link
-		cursor
-		to={to}
-		as={noRoute ? 'a' : LinkOrg}
-		href={noRoute && to}
-	/>
-)

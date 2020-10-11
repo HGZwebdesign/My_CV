@@ -1,13 +1,12 @@
 import React from 'react'
 
-import {Link} from '../Text'
 import {styled} from 'Styles'
 import {Box} from '../Box'
 
 const ButtonOrLink = props => {
 	const {to, disabled} = props
 	if (to && !disabled) {
-		return <Link {...props} />
+		return <a {...props} />
 	}
 	return <button type="button" {...props} />
 }
