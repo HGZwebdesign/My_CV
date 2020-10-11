@@ -1,27 +1,23 @@
 import React from 'react'
 import {Box, ContentBox} from 'Components/Box'
-import {M_BOLD_ANTI, Text} from 'Components/Text'
 import {MAIN, ANTI, Theme, headerTextTheme} from 'Styles'
-import {useLocation} from 'react-router-dom'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import MenuWithHamburger from 'Components/MenuWithHamburger'
 import {sections} from '../Sections/settings'
+import styled from 'styled-components'
 
-const Logo = () => {
-	const location = useLocation()
-	return (
-		<a to={`/${location.search}`}>
-			<Text set={M_BOLD_ANTI}>HGZ</Text>
-		</a>
-	)
-}
+const WrapBox = styled(Box)`
+	position: fixed;
+	top: 0;
+	z-index: 100;
+`
 
 const Header = () => {
 	const {isPhone} = useMediaQuery()
 
 	return (
 		<Theme theme={headerTextTheme}>
-			<Box {...{bg: MAIN, fg: ANTI, shadow: 2}}>
+			<WrapBox {...{bg: MAIN, fg: ANTI, shadow: 2}}>
 				<ContentBox
 					{...{
 						padding: isPhone ? '0.5rem' : '1rem',
@@ -29,12 +25,9 @@ const Header = () => {
 						relative: true,
 					}}
 				>
-					{/* <Box left flex="0">
-						<Logo />
-					</Box> */}
 					<MenuWithHamburger {...{sections}} />
 				</ContentBox>
-			</Box>
+			</WrapBox>
 		</Theme>
 	)
 }

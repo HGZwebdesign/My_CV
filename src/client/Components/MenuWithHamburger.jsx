@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import {Box} from 'Components/Box'
 import {M_ANTI, Text} from 'Components/Text'
 import {styled, css, MAIN, ANTI} from 'Styles'
-import {useLocation} from 'react-router-dom'
 import {useMediaQuery} from 'plugins/MediaQuery'
+import ScrollLink from './ScrollLink'
 
 const MenuInput = styled(Box)``
 
@@ -72,7 +72,6 @@ const ListWrap = styled(Box)`
 `
 
 const ListItem = ({id, label, sections}) => {
-	const location = useLocation()
 	const [open, setOpen] = useState()
 	const {isPhone} = useMediaQuery()
 	return (
@@ -86,20 +85,15 @@ const ListItem = ({id, label, sections}) => {
 			}}
 		>
 			<Box gap="3rem" spaceBetween>
-				<Box
-					{...{
-						inline: true,
-						padding: '0.5rem',
-						as: 'a',
-						href: `/#${id}${location.search}`,
-					}}
-				>
-					<Text set={M_ANTI}>
-						{label
-							?.split('')
-							.map((n, i) => (i ? n : n.toUpperCase()))
-							.join('')}
-					</Text>
+				<Box {...{inline: true, padding: '0.5rem'}}>
+					<ScrollLink to={`#${id}`} padding="2rem">
+						<Text set={M_ANTI}>
+							{label
+								?.split('')
+								.map((n, i) => (i ? n : n.toUpperCase()))
+								.join('')}
+						</Text>
+					</ScrollLink>
 				</Box>
 				{isPhone && sections && (
 					<Box
