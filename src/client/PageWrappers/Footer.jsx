@@ -1,5 +1,5 @@
 import React from 'react'
-import {main, Theme, accent, headerTextTheme, anti} from 'Styles'
+import {MAIN, Theme, headerTextTheme, ANTI} from 'Styles'
 import {Box, ContentBox} from 'Components/Box'
 import {useMediaQuery} from 'plugins/MediaQuery'
 
@@ -8,9 +8,9 @@ const Footer = () => {
 
 	return (
 		<Theme theme={headerTextTheme}>
-			<Box {...{bg: main, fg: anti, shadow: 22}}>
+			<Box {...{id: 'footer', bg: MAIN, fg: ANTI, shadow: 22}}>
 				<ContentBox {...{padding: '1rem', column: isPhone}}>
-					<Box fg={accent} right={!isPhone}>
+					<Box fg={ANTI} right={!isPhone}>
 						<a href="mailto: HGZwebdesign@gmail.com">HGZ &copy; 2020</a>
 					</Box>
 				</ContentBox>

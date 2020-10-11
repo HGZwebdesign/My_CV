@@ -1,11 +1,33 @@
 /* eslint-disable complexity */
 import {css} from 'styled-components'
-import {Grey2, anti, accent, Blue3, White} from './colors'
+import {ACCENT, BLUE4, WHITE, BLUE2, ANTI} from './colors'
+import {
+	XXL,
+	XXL_BOLD,
+	XXL_BLUE4,
+	XL,
+	XL_BLUE4,
+	L,
+	XL_BOLD,
+	L_BLUE4,
+	L_BOLD_BLUE4,
+	M,
+	M_BLUE4,
+	M_BOLD_BLUE4,
+	M_ITALIC_BLUE4,
+	S,
+	S_BLUE4,
+	UL,
+	S_UL,
+	OL,
+	S_OL,
+	LINK,
+	M_ANTI,
+	M_BOLD_ANTI,
+} from '../Components/Text'
 
 export const defaultTheme = {
-	maxWidth: css`
-		max-width: 64rem;
-	`,
+	contentWidth: '64rem',
 	gap: '1rem',
 }
 
@@ -32,7 +54,7 @@ const defaultTextTheme = {
 			${p => p.theme.text?.size?.m};
 		`,
 		size: {
-			xxl: 3.5, // rem
+			xxl: 2.5, // rem
 			xl: 2,
 			l: 1.5,
 			m: 1,
@@ -42,96 +64,104 @@ const defaultTextTheme = {
 			font-family: 'Quicksand', sans-serif;
 		`,
 
-		xxl: css`
+		[XXL]: css`
 			font-size: ${p => p.theme.text.size.xxl}rem;
 			line-height: 1.1;
 		`,
-		xxlGrey: css`
-			${p => p.theme.text.xxl};
-			color: ${Grey2};
+		[XXL_BOLD]: css`
+			${p => p.theme.text[XXL]};
+			font-weight: 600;
+		`,
+		[XXL_BLUE4]: css`
+			${p => p.theme.text[XXL]};
+			color: ${BLUE4};
 		`,
 
-		xl: css`
+		[XL]: css`
 			font-size: ${p => p.theme.text.size.xl}rem;
 			line-height: 1.3;
 		`,
-		xlGrey: css`
-			${p => p.theme.text.xl};
-			color: ${Grey2};
+		[XL_BOLD]: css`
+			${p => p.theme.text[XL]};
+			font-weight: 600;
+		`,
+		[XL_BLUE4]: css`
+			${p => p.theme.text[XL]};
+			color: ${BLUE4};
 		`,
 
-		l: css`
+		[L]: css`
 			font-size: ${p => p.theme.text.size.l}rem;
 			line-height: 1.3;
 		`,
-		lGrey: css`
-			${p => p.theme.text.l};
-			color: ${Grey2};
+		[L_BLUE4]: css`
+			${p => p.theme.text[L]};
+			color: ${BLUE4};
 		`,
-		lGreyBold: css`
-			${p => p.theme.text.l};
+		[L_BOLD_BLUE4]: css`
+			${p => p.theme.text[L]};
 			font-weight: 600;
-			color: ${Grey2};
+			color: ${BLUE4};
 		`,
 
-		m: css`
+		[M]: css`
 			font-size: ${p => p.theme.text.size.m}rem;
 			line-height: 1.8;
 		`,
-		mAnti: css`
-			${p => p.theme.text.m};
-			color: ${anti};
+		[M_BLUE4]: css`
+			${p => p.theme.text[M]};
+			color: ${BLUE4};
 		`,
-		mAntiBold: css`
-			${p => p.theme.text.m};
+		[M_ANTI]: css`
+			${p => p.theme.text[M]};
+			color: ${ANTI};
+		`,
+		[M_BOLD_ANTI]: css`
+			${p => p.theme.text[M]};
 			font-weight: 600;
-			color: ${anti};
+			color: ${ANTI};
 		`,
-		mGrey: css`
-			${p => p.theme.text.m};
-			color: ${Grey2};
-		`,
-		mGreyBold: css`
-			${p => p.theme.text.m};
+		[M_BOLD_BLUE4]: css`
+			${p => p.theme.text[M]};
 			font-weight: 600;
-			color: ${Grey2};
+			color: ${BLUE4};
 		`,
-		mGreyItalic: css`
-			${p => p.theme.text.m};
+		[M_ITALIC_BLUE4]: css`
+			${p => p.theme.text[M]};
 			font-style: italic;
-			color: ${Grey2};
+			color: ${BLUE4};
 		`,
 
-		s: css`
+		[S]: css`
 			font-size: ${p => p.theme.text.size.s}rem;
 		`,
-		sGrey: css`
-			${p => p.theme.text.s};
-			color: ${Grey2};
+		[S_BLUE4]: css`
+			${p => p.theme.text[S]};
+			color: ${BLUE4};
 		`,
 
-		ul: css`
+		[UL]: css`
 			list-style: square outside;
 		`,
-		sGreyUl: css`
+		[S_UL]: css`
 			font-size: ${p => p.theme.text.size.s}rem;
-			${p => p.theme.text.listUl};
+			${p => p.theme.text[S_UL]};
 		`,
 
-		ol: css`
+		[OL]: css`
 			list-style: decimal outside;
 		`,
-		sGreyOl: css`
+		[S_OL]: css`
 			font-size: ${p => p.theme.text.size.s}rem;
-			${p => p.theme.text.listOl};
+			${p => p.theme.text[OL]};
 		`,
 
-		link: css`
+		[LINK]: css`
 			font-weight: 600;
-			color: ${Blue3};
+			color: ${BLUE2};
 			:hover {
 				text-decoration: underline;
-				color: ${accent};
+				color: ${ACCENT};
 			}
 		`,
 	},
@@ -141,10 +171,10 @@ export const headerTextTheme = {
 	text: {
 		link: css`
 			font-weight: normal;
-			color: ${White};
+			color: ${WHITE};
 			:hover {
 				text-decoration: underline;
-				color: ${accent};
+				color: ${ACCENT};
 			}
 		`,
 	},

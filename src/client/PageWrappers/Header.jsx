@@ -1,36 +1,17 @@
 import React from 'react'
 import {Box, ContentBox} from 'Components/Box'
-import {Text} from 'Components/Text'
-import {main, anti, Theme, headerTextTheme} from 'Styles'
+import {M_BOLD_ANTI, Text} from 'Components/Text'
+import {MAIN, ANTI, Theme, headerTextTheme} from 'Styles'
 import {useLocation} from 'react-router-dom'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import MenuWithHamburger from 'Components/MenuWithHamburger'
-
-const links = [
-	{path: '', label: 'Home'},
-	{
-		path: 'about',
-		label: 'About',
-		links: [
-			{path: 'about/me', label: 'Me'},
-			{path: 'about/you', label: 'You'},
-		],
-	},
-	{
-		path: 'gql',
-		label: 'GraphQL',
-		links: [
-			{path: 'gql/superLongName', label: 'Super Long Name'},
-			{path: 'gql/you', label: 'You'},
-		],
-	},
-]
+import {sections} from '../Sections/settings'
 
 const Logo = () => {
 	const location = useLocation()
 	return (
 		<a to={`/${location.search}`}>
-			<Text set="mAntiBold">HGZ</Text>
+			<Text set={M_BOLD_ANTI}>HGZ</Text>
 		</a>
 	)
 }
@@ -40,7 +21,7 @@ const Header = () => {
 
 	return (
 		<Theme theme={headerTextTheme}>
-			<Box {...{bg: main, fg: anti, shadow: 2}}>
+			<Box {...{bg: MAIN, fg: ANTI, shadow: 2}}>
 				<ContentBox
 					{...{
 						padding: isPhone ? '0.5rem' : '1rem',
@@ -48,10 +29,10 @@ const Header = () => {
 						relative: true,
 					}}
 				>
-					<Box left flex="0">
+					{/* <Box left flex="0">
 						<Logo />
-					</Box>
-					<MenuWithHamburger {...{links}} />
+					</Box> */}
+					<MenuWithHamburger {...{sections}} />
 				</ContentBox>
 			</Box>
 		</Theme>

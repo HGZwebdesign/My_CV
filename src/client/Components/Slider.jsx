@@ -1,7 +1,7 @@
 /* eslint-disable no-return-assign */
 import React, {Fragment, Component} from 'react'
 import {Box} from 'Components/Box'
-import {Text} from 'Components/Text'
+import {Text, XXL} from 'Components/Text'
 import {styled, css, accent} from 'Styles'
 import Slider from 'react-slick'
 
@@ -52,7 +52,7 @@ class Arrow extends Component {
 				padding="0 2rem"
 				onClick={onClick}
 			>
-				<Text set="xxl" inline>
+				<Text set={XXL} inline>
 					{flip ? '<' : '>'}
 				</Text>
 			</ArrowField>

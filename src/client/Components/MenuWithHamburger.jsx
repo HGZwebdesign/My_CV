@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Box} from 'Components/Box'
-import {Text} from 'Components/Text'
-import {styled, css, main, anti} from 'Styles'
+import {M_ANTI, Text} from 'Components/Text'
+import {styled, css, MAIN, ANTI} from 'Styles'
 import {useLocation} from 'react-router-dom'
 import {useMediaQuery} from 'plugins/MediaQuery'
 
@@ -16,7 +16,7 @@ const MenuIcon = styled(Box).attrs({
 	height: ${p => p.size}px;
 	width: 100%;
 
-	background-color: ${anti};
+	background-color: ${ANTI};
 	border-radius: 5px;
 
 	::before,
@@ -27,7 +27,7 @@ const MenuIcon = styled(Box).attrs({
 		height: ${p => p.size}px;
 		width: 100%;
 
-		background: ${anti};
+		background: ${ANTI};
 		border-radius: 5px;
 
 		transition: 0.3s ease-in-out;
@@ -54,7 +54,7 @@ const ListWrap = styled(Box)`
 			max-height: calc(100vh - 2.7rem);
 			height: 0;
 
-			background-color: ${main};
+			background-color: ${MAIN};
 
 			/* overflow stuff */
 			overflow-x: hidden;
@@ -71,7 +71,7 @@ const ListWrap = styled(Box)`
 		`}
 `
 
-const ListItem = ({path, label, links}) => {
+const ListItem = ({id, label, sections}) => {
 	const location = useLocation()
 	const [open, setOpen] = useState()
 	const {isPhone} = useMediaQuery()
@@ -85,11 +85,23 @@ const ListItem = ({path, label, links}) => {
 				inline: !isPhone,
 			}}
 		>
-			<Box gap spaceBetween>
-				<a to={`/${path}${location.search}`}>
-					<Text set="mAnti">{label}</Text>
-				</a>
-				{isPhone && links && (
+			<Box gap="3rem" spaceBetween>
+				<Box
+					{...{
+						inline: true,
+						padding: '0.5rem',
+						as: 'a',
+						href: `/#${id}${location.search}`,
+					}}
+				>
+					<Text set={M_ANTI}>
+						{label
+							?.split('')
+							.map((n, i) => (i ? n : n.toUpperCase()))
+							.join('')}
+					</Text>
+				</Box>
+				{isPhone && sections && (
 					<Box
 						{...{
 							right: true,
@@ -105,7 +117,7 @@ const ListItem = ({path, label, links}) => {
 			</Box>
 			{open && (
 				<Box as="ul" top column left>
-					{links?.map((item, i) => (
+					{sections?.map((item, i) => (
 						<ListItem key={i} {...item} />
 					))}
 				</Box>
@@ -114,22 +126,21 @@ const ListItem = ({path, label, links}) => {
 	)
 }
 
-const List = ({links}) => {
+const List = ({sections}) => {
 	const {isPhone} = useMediaQuery()
-	if (!links) return false
+	if (!sections) return false
 	return (
 		<ListWrap
 			{...{
 				as: 'ul',
 				gap: '0.5rem',
 				top: true,
-				right: !isPhone,
-				left: isPhone,
+				left: true,
 				column: isPhone,
 				isPhone,
 			}}
 		>
-			{links.map((item, i) => (
+			{sections.map((item, i) => (
 				<ListItem key={i} {...item} />
 			))}
 		</ListWrap>
@@ -172,9 +183,9 @@ const MenuWrap = styled(Box)`
 	}
 `
 
-const MenuWithHamburger = ({links}) => {
+const MenuWithHamburger = ({sections}) => {
 	const {isPhone} = useMediaQuery()
-	if (!links) return false
+	if (!sections) return false
 	return (
 		<MenuWrap right>
 			{isPhone && (
@@ -185,7 +196,7 @@ const MenuWithHamburger = ({links}) => {
 					</MenuLabel>
 				</>
 			)}
-			<List {...{links}} />
+			<List {...{sections}} />
 		</MenuWrap>
 	)
 }

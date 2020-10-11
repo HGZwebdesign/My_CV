@@ -1,10 +1,10 @@
 import React from 'react'
 import {GlobalStyle, Theme, defaultThemesSet} from 'Styles'
 import {BrowserRouter} from 'react-router-dom'
-import {Home} from './Pages'
 import {Header, Footer} from './PageWrappers'
 import MediaQueryProvider from 'plugins/MediaQuery'
 import PageWrap from './Components/PageWrap'
+import MainPanel from './Sections/MainPanel'
 
 const App = () => {
 	return (
@@ -13,7 +13,7 @@ const App = () => {
 				<BrowserRouter>
 					<GlobalStyle />
 					<PageWrap header={<Header />} footer={<Footer />}>
-						<Home />
+						<MainPanel />
 					</PageWrap>
 				</BrowserRouter>
 			</MediaQueryProvider>
