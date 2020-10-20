@@ -1,6 +1,6 @@
 /* eslint-disable complexity */
 import {css} from 'styled-components'
-import {ACCENT, BLUE4, WHITE, BLUE2, ANTI} from './colors'
+import {ACCENT, BLUE4, WHITE, BLUE2, ANTI, MAIN} from './colors'
 import {
 	XXL,
 	XXL_BOLD,
@@ -22,8 +22,13 @@ import {
 	OL,
 	S_OL,
 	LINK,
+	M_MAIN,
+	M_BOLD_MAIN,
+	S_MAIN,
+	S_BOLD_MAIN,
 	M_ANTI,
 	M_BOLD_ANTI,
+	L_BOLD,
 } from '../Components/Text'
 
 export const defaultTheme = {
@@ -94,6 +99,10 @@ const defaultTextTheme = {
 			font-size: ${p => p.theme.text.size.l}rem;
 			line-height: 1.3;
 		`,
+		[L_BOLD]: css`
+			${p => p.theme.text[L]};
+			font-weight: 600;
+		`,
 		[L_BLUE4]: css`
 			${p => p.theme.text[L]};
 			color: ${BLUE4};
@@ -111,6 +120,15 @@ const defaultTextTheme = {
 		[M_BLUE4]: css`
 			${p => p.theme.text[M]};
 			color: ${BLUE4};
+		`,
+		[M_MAIN]: css`
+			${p => p.theme.text[M]};
+			color: ${MAIN};
+		`,
+		[M_BOLD_MAIN]: css`
+			${p => p.theme.text[M]};
+			font-weight: 600;
+			color: ${MAIN};
 		`,
 		[M_ANTI]: css`
 			${p => p.theme.text[M]};
@@ -134,6 +152,15 @@ const defaultTextTheme = {
 
 		[S]: css`
 			font-size: ${p => p.theme.text.size.s}rem;
+		`,
+		[S_MAIN]: css`
+			${p => p.theme.text[S]};
+			color: ${MAIN};
+		`,
+		[S_BOLD_MAIN]: css`
+			${p => p.theme.text[S]};
+			font-weight: 600;
+			color: ${MAIN};
 		`,
 		[S_BLUE4]: css`
 			${p => p.theme.text[S]};

@@ -1,8 +1,8 @@
 import React from 'react'
-import {SectionBox} from 'Components/Box'
+import {SectionBox} from './MainPanel'
 
-const Skills = ({id, label}) => {
+const Portfolio = ({id, label}) => {
 	return <SectionBox {...{id}}>{label}</SectionBox>
 }
 
-export default Skills
+export default Portfolio

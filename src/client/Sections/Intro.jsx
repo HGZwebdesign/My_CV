@@ -1,10 +1,11 @@
 import React from 'react'
-import {Box, SectionBox, ContentBox} from 'Components/Box'
+import {Box, NarrowContentBox} from 'Components/Box'
 import styled from 'styled-components'
 import bgImage from 'assets/images/bg.jpg'
 import {ANTI, MAIN, BLUE5, VIOLET2} from '../styles'
 import {L, Text, XXL_BOLD} from '../Components/Text'
 import portrait from 'assets/images/portrait.png'
+import {SectionBox} from './MainPanel'
 
 const SectionBoxBg = styled(SectionBox)`
 	background-image: url(${bgImage});
@@ -33,7 +34,7 @@ const TextBox = styled(Box)`
 const Intro = ({id}) => {
 	return (
 		<SectionBoxBg {...{bg: MAIN, fg: ANTI, id, minHeight: '100vh'}}>
-			<ContentBox maxWidth="50rem" relative bottom right>
+			<NarrowContentBox relative bottom right>
 				<TextBox>
 					<Box column gap left>
 						<Text set={L}>MY NAME IS</Text>
@@ -54,7 +55,7 @@ const Intro = ({id}) => {
 					</Box>
 				</TextBox>
 				<ImgBox size={70} />
-			</ContentBox>
+			</NarrowContentBox>
 		</SectionBoxBg>
 	)
 }

@@ -1,4 +1,3 @@
 export {default as Box} from './Box'
 export {default as ThemedBox} from './ThemedBox'
-export {default as ContentBox} from './ContentBox'
-export {default as SectionBox} from './SectionBox'
+export {ContentBox, NarrowContentBox} from './ContentBox'
