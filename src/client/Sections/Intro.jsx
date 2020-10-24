@@ -3,9 +3,10 @@ import {Box, NarrowContentBox} from 'Components/Box'
 import styled from 'styled-components'
 import bgImage from 'assets/images/bg.jpg'
 import {ANTI, MAIN, BLUE5, VIOLET2} from '../styles'
-import {L, Text, XXL_BOLD} from '../Components/Text'
+import {L, M, Text, XL_BOLD, XXL_BOLD} from '../Components/Text'
 import portrait from 'assets/images/portrait.png'
 import {SectionBox} from './MainPanel'
+import {useMediaQuery} from 'plugins/MediaQuery'
 
 const SectionBoxBg = styled(SectionBox)`
 	background-image: url(${bgImage});
@@ -32,15 +33,18 @@ const TextBox = styled(Box)`
 `
 
 const Intro = ({id}) => {
+	const {isPhone} = useMediaQuery()
 	return (
 		<SectionBoxBg {...{bg: MAIN, fg: ANTI, id, minHeight: '100vh'}}>
 			<NarrowContentBox relative bottom right>
 				<TextBox>
 					<Box column gap left>
-						<Text set={L}>MY NAME IS</Text>
+						<Text set={isPhone ? M : L}>MY NAME IS</Text>
 						<Box column left gap="0.2rem">
-							<Text set={XXL_BOLD}>HANNA </Text>
-							<Text set={XXL_BOLD}>GAUDASIŃSKA-ZAPAŚNIK</Text>
+							<Text set={isPhone ? XL_BOLD : XXL_BOLD}>HANNA </Text>
+							<Text set={isPhone ? XL_BOLD : XXL_BOLD}>
+								GAUDASIŃSKA-ZAPAŚNIK
+							</Text>
 						</Box>
 						<Box
 							{...{
@@ -50,7 +54,7 @@ const Intro = ({id}) => {
 								bg: VIOLET2,
 							}}
 						>
-							<Text set={L}>I'm a web developer</Text>
+							<Text set={isPhone ? M : L}>I'm a web developer</Text>
 						</Box>
 					</Box>
 				</TextBox>

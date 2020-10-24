@@ -48,10 +48,10 @@ const ListWrap = styled(Box)`
 			display: none;
 
 			position: fixed;
-			top: 2.7rem;
+			top: 2.5rem;
 			left: 0;
 			width: 100vw;
-			max-height: calc(100vh - 2.7rem);
+			max-height: calc(100vh - 2.5rem);
 			height: 0;
 
 			background-color: ${MAIN};
@@ -134,9 +134,11 @@ const List = ({sections}) => {
 				isPhone,
 			}}
 		>
-			{sections.map((item, i) => (
-				<ListItem key={i} {...item} />
-			))}
+			{sections
+				.filter(({noLink}) => !noLink)
+				.map((item, i) => (
+					<ListItem key={i} {...item} />
+				))}
 		</ListWrap>
 	)
 }

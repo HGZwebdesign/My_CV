@@ -6,7 +6,7 @@ import {L_BOLD, S_BOLD_MAIN, Text} from '../Components/Text'
 import Box from '../Components/Box/Box'
 import {skillsDB} from '../settings'
 import Mover from '../Components/Mover'
-import colorsSet from 'assets/images/set_color.png'
+import logos from 'assets/images/logos.png'
 import {useMediaQuery} from 'plugins/MediaQuery'
 
 const Dot = styled(Box)`
@@ -76,7 +76,7 @@ const Skills = ({id, label}) => {
 					{!isPhone && (
 						<Mover
 							{...{
-								image: colorsSet,
+								image: logos,
 								outerProps: {margin: '', rigth: true},
 							}}
 						/>

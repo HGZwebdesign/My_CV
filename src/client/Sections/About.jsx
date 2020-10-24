@@ -15,7 +15,7 @@ const About = ({id, label}) => {
 			<NarrowContentBox
 				{...{
 					top: true,
-					padding: '6rem 0.5rem 3rem',
+					padding: '6rem 0 3rem',
 					column: true,
 					left: true,
 					gap: '1rem',

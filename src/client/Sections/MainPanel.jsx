@@ -9,7 +9,7 @@ const UnderLineBox = styled(Box)`
 `
 
 export const SectionBox = ({children, id, ...props}) => (
-	<Box {...{id, as: 'section', ...props}}>{children}</Box>
+	<Box {...{id, as: 'section', padding: '0 1rem', ...props}}>{children}</Box>
 )
 
 export const SecTitle = ({label, ...props}) => (
