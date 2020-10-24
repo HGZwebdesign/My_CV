@@ -3,7 +3,7 @@ import {About, Experience, Intro, Portfolio, Skills, Logos} from './Sections'
 export const sections = [
 	{id: 'intro', label: 'intro', Component: Intro},
 	{id: 'about', label: 'about', Component: About},
-	{id: 'logos', label: 'logos', Component: Logos, noLink: true},
+	// {id: 'logos', label: 'logos', Component: Logos, noLink: true},
 	{id: 'skills', label: 'skills', Component: Skills},
 	{
 		id: 'portfolio',
