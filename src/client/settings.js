@@ -2,7 +2,7 @@ import {About, Experience, Intro, Portfolio, Skills, Logos} from './Sections'
 
 export const sections = [
 	{id: 'intro', label: 'intro', Component: Intro},
-	{id: 'about', label: 'about', Component: About},
+	{id: 'about', label: 'about me', Component: About},
 	// {id: 'logos', label: 'logos', Component: Logos, noLink: true},
 	{id: 'skills', label: 'skills', Component: Skills},
 	{
@@ -67,5 +67,38 @@ export const skillsDB = [
 				{label: 'Russian', score: 1},
 			],
 		],
+	},
+]
+
+export const projectsDB = [
+	{
+		scr: '',
+		label: 'project 1',
+		link: '',
+	},
+	{
+		scr: '',
+		label: 'project 2',
+		link: '',
+	},
+	{
+		scr: '',
+		label: 'project 3',
+		link: '',
+	},
+	{
+		scr: '',
+		label: 'project 4',
+		link: '',
+	},
+	{
+		scr: '',
+		label: 'project 5',
+		link: '',
+	},
+	{
+		scr: '',
+		label: 'project 6',
+		link: '',
 	},
 ]
