@@ -1,12 +1,27 @@
-import {About, Experience, Intro, Portfolio, Skills, Logos} from './Sections'
+import {
+	ABOUT,
+	EXPERIENCE,
+	FOOTER,
+	INTRO,
+	PORTFOLIO,
+	SKILLS,
+} from 'src/constants'
+import {
+	About,
+	Experience,
+	Intro,
+	Portfolio,
+	Skills,
+	// Logos
+} from './Sections'
 
 export const sections = [
-	{id: 'intro', label: 'intro', Component: Intro},
-	{id: 'about', label: 'about me', Component: About},
+	{id: INTRO, label: 'intro', Component: Intro},
+	{id: ABOUT, label: 'about me', Component: About},
 	// {id: 'logos', label: 'logos', Component: Logos, noLink: true},
-	{id: 'skills', label: 'skills', Component: Skills},
+	{id: SKILLS, label: 'skills', Component: Skills},
 	{
-		id: 'portfolio',
+		id: PORTFOLIO,
 		label: 'portfolio',
 		Component: Portfolio,
 		links: [
@@ -16,8 +31,8 @@ export const sections = [
 			{id: 'link_out4', label: 'projekt 4'},
 		],
 	},
-	{id: 'experience', label: 'experience', Component: Experience},
-	{id: 'footer', label: 'contact'},
+	{id: EXPERIENCE, label: 'experience', Component: Experience},
+	{id: FOOTER, label: 'contact'},
 ]
 
 export const skillsDB = [

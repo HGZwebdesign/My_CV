@@ -15,7 +15,8 @@
 		// aliases - definitions for VS Code tools like path-intellisense (this is separete from webpack compilation!)
 		"baseUrl": ".",
 		"paths": {
-			"app/*": ["src/*"],
+			"src/*": ["src/*"],
+			"config/*": ["config/*"],
 			"plugins/*": ["plugins/*"],
 			"data/*": ["data/*"],
 			"assets/*": ["assets/*"],

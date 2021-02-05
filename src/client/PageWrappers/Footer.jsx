@@ -11,7 +11,9 @@ const Footer = () => {
 			<Box {...{id: 'footer', bg: MAIN, fg: ANTI, shadow: 22}}>
 				<ContentBox {...{padding: '1rem', column: isPhone}}>
 					<Box fg={ANTI} right={!isPhone}>
-						<a href="mailto: HGZwebdesign@gmail.com">HGZ &copy; 2020</a>
+						<a href="mailto: HGZwebdesign@gmail.com">
+							HGZ &copy; {new Date().getFullYear()}
+						</a>
 					</Box>
 				</ContentBox>
 			</Box>

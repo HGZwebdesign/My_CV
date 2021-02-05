@@ -7,7 +7,8 @@ My introduction website containing CV and portfolio.
 ## Technologies used in this project:
 
 - HTML5
+- Styled Components
 - JavaScript (ES6)
 - React.js
-- Styled Components
+- Node.js (express.js)
 - Webpack

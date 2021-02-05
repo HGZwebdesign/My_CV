@@ -14,7 +14,7 @@ const WrapBox = styled(Box)`
 		flex: 1 0 auto;
 	}
 
-	/* shrinked header, footer */
+	/* shrank header, footer */
 	> div:first-child,
 	> div:last-child {
 		flex: 0 0 auto;
@@ -22,7 +22,7 @@ const WrapBox = styled(Box)`
 `
 
 /**
- * Componment wrapping whole the app
+ * Component wrapping whole the app
  * @param {{header: Node, footer: Node, children: Node}
  */
 const PageWrap = ({

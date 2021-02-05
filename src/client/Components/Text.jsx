@@ -1,4 +1,3 @@
-import React from 'react'
 import {styled, css} from 'Styles'
 
 export const XXL = 'XXL'
@@ -29,11 +28,11 @@ export const OL = 'OL'
 export const S_OL = 'S_OL'
 export const LINK = 'LINK'
 
-const Span = styled.span`
+export const Text = styled.span`
 	${p => p.theme.text?.css};
 	${p => p.theme.text?.[p.set || M]};
+	${p => p.upperCase && `text-transform: uppercase`};
 
-	${p => p.upperCase && `text-transform: uppercase;`};
 	${p => p.cursor && `cursor: pointer`};
 
 	transition: 0.5s;
@@ -45,5 +44,3 @@ const Span = styled.span`
 			}
 		`};
 `
-
-export const Text = p => <Span {...p} />

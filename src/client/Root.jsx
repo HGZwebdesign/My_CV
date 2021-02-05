@@ -5,6 +5,7 @@ import {Header, Footer} from './PageWrappers'
 import MediaQueryProvider from 'plugins/MediaQuery'
 import PageWrap from './Components/PageWrap'
 import MainPanel from './Sections/MainPanel'
+import {MetaData} from './Components/MetaData'
 
 const App = () => {
 	return (
@@ -12,6 +13,7 @@ const App = () => {
 			<MediaQueryProvider>
 				<BrowserRouter>
 					<GlobalStyle />
+					<MetaData />
 					<PageWrap header={<Header />} footer={<Footer />}>
 						<MainPanel />
 					</PageWrap>
