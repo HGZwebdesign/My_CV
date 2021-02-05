@@ -17,6 +17,8 @@
 		["@babel/plugin-proposal-class-properties", {"loose": true}],
 		// Support import() syntax
 		"@babel/plugin-syntax-dynamic-import",
+		// Accessing deeply nested properties: { obj?.foo?.bar?.baz }
+		"@babel/plugin-proposal-optional-chaining"
 	],
 
 	"env": {

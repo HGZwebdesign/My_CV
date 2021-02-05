@@ -120,9 +120,9 @@ const ListItem = ({id, label, sections}) => {
 	)
 }
 
-const List = ({sections}) => {
+const List = ({items}) => {
 	const {isPhone} = useMediaQuery()
-	if (!sections) return false
+	if (!items) return false
 	return (
 		<ListWrap
 			{...{
@@ -134,7 +134,7 @@ const List = ({sections}) => {
 				isPhone,
 			}}
 		>
-			{sections
+			{items
 				.filter(({noLink}) => !noLink)
 				.map((item, i) => (
 					<ListItem key={i} {...item} />
@@ -179,9 +179,9 @@ const MenuWrap = styled(Box)`
 	}
 `
 
-const MenuWithHamburger = ({sections}) => {
+const MenuWithHamburger = ({items}) => {
 	const {isPhone} = useMediaQuery()
-	if (!sections) return false
+	if (!items) return false
 	return (
 		<MenuWrap right>
 			{isPhone && (
@@ -192,7 +192,7 @@ const MenuWithHamburger = ({sections}) => {
 					</MenuLabel>
 				</>
 			)}
-			<List {...{sections}} />
+			<List {...{items}} />
 		</MenuWrap>
 	)
 }

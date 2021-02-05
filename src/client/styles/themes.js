@@ -1,6 +1,7 @@
 /* eslint-disable complexity */
 import {css} from 'styled-components'
 import {ACCENT, BLUE4, WHITE, BLUE2, ANTI, MAIN} from './colors'
+
 import {
 	XXL,
 	XXL_BOLD,
@@ -31,10 +32,7 @@ import {
 	L_BOLD,
 } from '../Components/Text'
 
-export const defaultTheme = {
-	contentWidth: '64rem',
-	gap: '1rem',
-}
+export const defaultTheme = {contentWidth: '64rem', gap: '1rem'}
 
 const defaultColorsTheme = {
 	colorsCss: css`

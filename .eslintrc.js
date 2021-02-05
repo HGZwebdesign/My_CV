@@ -2,8 +2,8 @@ module.exports = {
 	env: {
 		browser: true,
 		node: true,
-		commonjs: true,
-		es2020: true,
+		commonjs: true, // will suggest to convert files to module form
+		es6: true,
 	},
 	parser: 'babel-eslint',
 	plugins: ['jest', 'import', 'promise', 'react', 'unicorn'],
@@ -89,7 +89,6 @@ module.exports = {
 		'react/no-unescaped-entities': 0,
 		'react/require-default-props': 0,
 		'react/require-optimization': 0,
-		'padding-line-between-statements': 0,
 		'promise/no-callback-in-promise': 0,
 		'semi-spacing': 0,
 		'semi-style': 0,

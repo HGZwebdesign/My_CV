@@ -3,7 +3,8 @@ module.exports = {
 	verbose: true,
 	moduleDirectories: ['node_modules', 'src', 'plugins'],
 	moduleNameMapper: {
-		'^app(.*)$': '<rootDir>/src/$1',
+		'^src(.*)$': '<rootDir>/src/$1',
+		'^config(.*)$': '<rootDir>/config/$1',
 		'^plugins(.*)$': '<rootDir>/plugins/$1',
 		'^data(.*)$': '<rootDir>/data/$1',
 		'^assets(.*)$': '<rootDir>/assets/$1',

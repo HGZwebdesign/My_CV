@@ -35,7 +35,7 @@ const Header = () => {
 						relative: true,
 					}}
 				>
-					<MenuWithHamburger {...{sections}} />
+					<MenuWithHamburger {...{items: sections}} />
 				</ContentBox>
 			</WrapBox>
 		</Theme>
