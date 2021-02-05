@@ -170,7 +170,7 @@ const defaultTextTheme = {
 		`,
 		[S_UL]: css`
 			font-size: ${p => p.theme.text.size.s}rem;
-			${p => p.theme.text[S_UL]};
+			${p => p.theme.text[UL]};
 		`,
 
 		[OL]: css`
