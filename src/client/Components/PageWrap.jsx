@@ -31,11 +31,11 @@ const PageWrap = ({
 	children,
 }) => {
 	return (
-			<WrapBox top column id="appWrap">
-				<Box>{header} </Box>
-				<Box stretch>{children}</Box>
-				<Box>{footer}</Box>
-			</WrapBox>
+		<WrapBox top column id="appWrap">
+			{header}
+			<Box stretch>{children}</Box>
+			{footer}
+		</WrapBox>
 	)
 }
 

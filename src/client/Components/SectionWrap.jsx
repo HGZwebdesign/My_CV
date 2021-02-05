@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, ContentBox} from 'Components/Box'
-import {styled, White, css} from 'Styles'
+import {styled, css, WHITE} from 'Styles'
 
 const WideBox = styled(Box)`
 	${p =>
@@ -19,7 +19,7 @@ const WideBox = styled(Box)`
  */
 const SectionWrap = ({
 	children,
-	bg = White,
+	bg = WHITE,
 	fg,
 	imgUrl,
 	top = true,

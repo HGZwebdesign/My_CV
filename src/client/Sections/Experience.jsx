@@ -1,5 +1,5 @@
 import React from 'react'
-import {SectionBox} from 'Components/Box'
+import {SectionBox} from './MainPanel'
 
 const Experience = ({id, label}) => {
 	return <SectionBox {...{id}}>{label}</SectionBox>
