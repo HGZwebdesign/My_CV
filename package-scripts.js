@@ -12,7 +12,7 @@ const PROD = 'NODE_ENV=production'
 const TEST = 'NODE_ENV=test'
 
 // const DEBUG = `DEBUG=\${DEBUG:-$_dbg}`
-const DEBUG = `DEBUG=http,express,sqlite,:*`
+const DEBUG = `DEBUG=http,express,sqlite,sequelize:*`
 const DEBUG_BABEL = `DEBUG=*,-babel*`
 const DEBUG_ALL = `DEBUG=*`
 
@@ -20,25 +20,30 @@ module.exports = {
 	scripts: {
 		default: 'nps start', // heroku require default action in nps
 		start: {
-			default: `nps build db.migration prod`,
-			inspect: `nps build db.migration prod.inspect`,
+			default: `nps build prod`,
+			inspect: `nps build prod.inspect`,
 		},
 		prod: {
 			default: `${DEBUG} ${PROD} node --inspect ${serverPath}`,
 			inspect: `${DEBUG_ALL} ${PROD} node --inspect ${serverPath}`,
 		},
 		dev: {
-			default: concurrent.nps('server', 'db.migration', 'client'),
-			verbose: concurrent.nps('server.verbose', 'db.migration', 'client'),
+			default: concurrent.nps('server', 'client'),
+			verbose: concurrent.nps('server.verbose', 'client'),
 		},
-		build: `webpack --mode production`,
+		build: `${PROD} webpack --mode production`,
 		client: `webpack serve --mode development --devtool inline-source-map --hot`,
 		server: {
 			default: `${DEBUG} nodemon --inspect ${serverPath}`,
 			verbose: `${DEBUG_ALL} nodemon --inspect ${serverPath}`,
 		},
 		db: {
-			migration: `node_modules/.bin/sequelize db:migrate`,
+			init: `node_modules/.bin/sequelize init`,
+			migration: {
+				default: `node_modules/.bin/sequelize db:migrate`,
+				prod: `${PROD} node_modules/.bin/sequelize db:migrate`,
+				create: `node_modules/.bin/sequelize migration:create`,
+			},
 		},
 		test: {
 			default: concurrent.nps('test.lint', 'test.full'),
