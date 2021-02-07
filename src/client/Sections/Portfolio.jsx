@@ -13,7 +13,7 @@ const Portfolio = ({id, label}) => {
 		<SectionBox {...{bg: WHITE, fg: MAIN, id}}>
 			<ContentBox
 				{...{
-					padding: '6rem 0 3rem',
+					padding: isPhone ? '3rem 0' : '4rem 0',
 					top: true,
 					gap: '1rem',
 					column: true,
@@ -22,7 +22,8 @@ const Portfolio = ({id, label}) => {
 				<Box padding="0 0 2rem">
 					<SecTitle {...{label}} />
 				</Box>
-				<Box wrap gap="3rem">
+				{/* TODO: In progress */}
+				{/* <Box wrap gap="3rem">
 					{projectsDB?.map(({src, label, link}) => (
 						<Text
 							key={label}
@@ -37,8 +38,8 @@ const Portfolio = ({id, label}) => {
 							</ImageBox>
 						</Text>
 					))}
-				</Box>
-				<Box padding="2rem 0" gap="0.5rem" left>
+				</Box> */}
+				<Box padding="2rem 0" gap="0.5rem">
 					<Text>
 						<Text sets={[M]}>Please check my GitHub account:</Text>{' '}
 						<Text
