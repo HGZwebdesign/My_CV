@@ -25,23 +25,38 @@ const About = ({id, label}) => {
 					<SecTitle {...{label}} />
 				</Box>
 				<Text>
-					I am a graduate of an intensive course for Front-end developer and
-					also market researcher with 3-years’ experience. I would like to
-					continue my professional career in IT industry, because web designing
-					constantly confronts me with interesting
+					I am a software programmer with 3-years' professional experience,
+					specializing in website development.
 				</Text>
 				<Text>
-					challenges. Solving them gives me a lot of joy and satisfaction. I am
-					looking for a position that will allow me to utilize my
+					My field of expertise ranges from front-end to 'soft' back-end
+					technologies. During my career I was involved in website styling and
+					UX/UI creation as well as client-server communication and databases
+					architecture design. Moreover my experience gained in the previous
+					profession of a market researcher allows me to successfully play the
+					role of a liaison with customers at both technical and the needs
+					analysis dimensions.
 				</Text>
 				<Text>
-					potential and develop newly gained knowledge and skills. I kindly
-					invite you to look at my portfolio on GitHub.eb designing constantly
-					confronts me with interesting
+					Programming is one of my passions too, which confronts me with many
+					interesting challenges everyday. Solving them gives me a lot of joy
+					and satisfaction.
 				</Text>
 				<Text>
-					challenges. Solving them gives me a lot of joy and satisfaction. I am
-					looking for a position that will allow me to utilize my
+					I am looking for job opportunities that will allow me to utilize my
+					potential and broaden my skills and knowledge. I kindly invite you to
+					look at my{' '}
+					<Text
+						{...{
+							as: 'a',
+							set: 'link',
+							href: 'https://github.com/HGZdev',
+							target: '_blank',
+						}}
+					>
+						GitHub
+					</Text>{' '}
+					portfolio.
 				</Text>
 			</NarrowContentBox>
 		</SectionBoxBg>
