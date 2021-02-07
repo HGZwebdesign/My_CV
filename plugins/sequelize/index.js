@@ -3,7 +3,7 @@
 import {readdirSync} from 'fs'
 import path from 'path'
 import Sequelize, {DataTypes} from 'sequelize'
-import configOrg from '../../config/sequelize.json'
+import configOrg from '../../config/sequelize.js'
 import debug from 'debug'
 const sequelizeDbg = debug('sequelize')
 
