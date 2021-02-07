@@ -7,7 +7,7 @@ import configOrg from '../../config/sequelize.json'
 import debug from 'debug'
 const sequelizeDbg = debug('sequelize')
 
-const {NODE_ENV} = process.env
+const {NODE_ENV, FORCE_DROP_DB_ON_INIT} = process.env
 const PROD = NODE_ENV === 'production'
 const config = configOrg[NODE_ENV || 'development']
 
@@ -15,7 +15,7 @@ export const sequelizeDbSync = db => {
 	try {
 		// sync: resync db schema
 		// force: true will drop the database if it already exists (DEV only)
-		db.sequelize.sync({force: !PROD})
+		db.sequelize.sync({force: FORCE_DROP_DB_ON_INIT || !PROD})
 		sequelizeDbg(`DB: ${PROD ? 'dropped and' : ''} resync.`)
 		// initial() // create initial values for tables
 	} catch (err) {
