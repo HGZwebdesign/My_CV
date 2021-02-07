@@ -5,7 +5,7 @@ const {HotModuleReplacementPlugin} = require('webpack')
 
 // NOTE: config duplication
 const LOCAL_PORT = 3000
-const SERVER_PORT = 8080
+const LOCAL_SERVER_PORT = 8080
 const OUT_DIR = 'build'
 const OUT_FILE = 'bundle.js'
 const APP_ICON_PATH = 'assets/favicon.ico'
@@ -53,7 +53,7 @@ module.exports = {
 	devServer: {
 		port: LOCAL_PORT,
 		proxy: {
-			'/api': `http://localhost:${SERVER_PORT}`,
+			'/api': `http://localhost:${LOCAL_SERVER_PORT}`,
 		},
 		// historyAPIFallback will redirect 404s to /index.html => fix a problem (works only for local dev-server) with "cannot GET /URL" error on refresh with React Router https://tylermcginnis.com/react-router-cannot-get-url-refresh/, ALTERNATIVE method (hack): HashRouter
 		historyApiFallback: true,

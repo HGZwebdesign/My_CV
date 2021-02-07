@@ -1,4 +1,4 @@
-import {OUT_DIR, SERVER_PORT, APP_ICON_PATH} from '../../config'
+import {OUT_DIR, LOCAL_SERVER_PORT, APP_ICON_PATH} from '../../config'
 import express from 'express'
 import os from 'os'
 import path from 'path'
@@ -10,7 +10,7 @@ import db from './database'
 
 const expressDbg = debug('express')
 
-const {PORT = SERVER_PORT, PWD: ABSOLUTE_PATH} = process.env
+const {PORT = LOCAL_SERVER_PORT, PWD: ABSOLUTE_PATH} = process.env
 
 const app = express()
 
