@@ -1,7 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-const {HotModuleReplacementPlugin} = require('webpack')
+const {HotModuleReplacementPlugin, DefinePlugin} = require('webpack')
 
 // NOTE: config duplication
 const LOCAL_PORT = 3000
@@ -67,6 +67,13 @@ module.exports = {
 			favicon: `./${APP_ICON_PATH}`,
 		}),
 		new HotModuleReplacementPlugin(),
+		// Access to process.env variables at front-end (e.g.: ApolloClient url requires this)
+		new DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+				DEBUG: JSON.stringify(process.env.DEBUG),
+			},
+		}),
 	],
 	resolve: {
 		// aliases - compilation paths
