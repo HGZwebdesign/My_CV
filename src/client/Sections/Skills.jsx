@@ -66,7 +66,7 @@ const Skills = ({id, label}) => {
 			<NarrowContentBox
 				{...{
 					top: true,
-					padding: '3rem 0',
+					padding: isPhone ? '3rem 0' : '4rem 0',
 					column: true,
 					left: true,
 					gap: '1rem',
