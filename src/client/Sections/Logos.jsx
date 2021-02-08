@@ -1,6 +1,6 @@
 import React from 'react'
 import {MAIN, VIOLET3_20} from '../styles'
-import {SectionBox} from './MainPanel'
+import {SectionBox} from '../Pages/Main'
 
 import logos from 'assets/images/logos.png'
 import Mover from '../Components/Mover'

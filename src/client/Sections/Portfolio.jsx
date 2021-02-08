@@ -1,22 +1,14 @@
 import React from 'react'
-import {MAIN, WHITE, styled, BLACK} from '../styles'
-import {SectionBox, SecTitle} from './MainPanel'
+import {MAIN, WHITE} from '../styles'
+import {SectionBox, SecTitle} from '../Pages/Main'
 import {ContentBox, Box} from '../Components/Box'
-import {projectsDB} from '../settings'
-import {M, M_BOLD_MAIN, Text} from '../Components/Text'
-
-const ImgBox = styled(Box)`
-	background-image: url(${p => p.img});
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	width: ${p => `${p.size}vh`};
-	height: ${p => `${p.size}vh`};
-
-	/* box-shadow: 0px 0px 48px 35px ${BLACK}; */
-`
+import {GITHUB, projectsDB} from './settings'
+import {BOLD, LINK, M, MAIN_COL, Text} from '../Components/Text'
+import ImageBox from '../Components/ImageBox'
+import {useMediaQuery} from 'plugins/MediaQuery'
 
 const Portfolio = ({id, label}) => {
+	const {isPhone} = useMediaQuery()
 	return (
 		<SectionBox {...{bg: WHITE, fg: MAIN, id}}>
 			<ContentBox
@@ -30,25 +22,34 @@ const Portfolio = ({id, label}) => {
 				<Box padding="0 0 2rem">
 					<SecTitle {...{label}} />
 				</Box>
-				<Box wrap gap>
+				<Box wrap gap="3rem">
 					{projectsDB?.map(({src, label, link}) => (
-						<a href={link} target="_blank" rel="noopener noreferrer">
-							<ImgBox shadow={2} size={30} img={src}>
-								<Text set={M_BOLD_MAIN}> {label}</Text>
-							</ImgBox>
-						</a>
+						<Text
+							key={label}
+							sets={[LINK]}
+							as="a"
+							href={link}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<ImageBox shadow={2} size={isPhone ? '80vw' : '20vw'} src={src}>
+								<Text sets={[M, BOLD, MAIN_COL]}> {label}</Text>
+							</ImageBox>
+						</Text>
 					))}
 				</Box>
-				<Box padding="2rem 0 " gap="0.5rem" left>
-					<Text set={M}>Please check my GitHub account:</Text>
-					<Text
-						set={M_BOLD_MAIN}
-						as="a"
-						href="https://github.com/HGZdev"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						HGZdev
+				<Box padding="2rem 0" gap="0.5rem" left>
+					<Text>
+						<Text sets={[M]}>Please check my GitHub account:</Text>{' '}
+						<Text
+							sets={[LINK]}
+							as="a"
+							href={GITHUB}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							HGZdev
+						</Text>
 					</Text>
 				</Box>
 			</ContentBox>

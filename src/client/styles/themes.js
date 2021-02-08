@@ -1,35 +1,27 @@
 /* eslint-disable complexity */
 import {css} from 'styled-components'
-import {ACCENT, BLUE4, WHITE, BLUE2, ANTI, MAIN} from './colors'
+import {ACCENT, BLUE4, WHITE, BLUE2, ANTI, MAIN, VIOLET1, BLUE3} from './colors'
 
 import {
+	BOLD,
+	NORMAL,
+	THIN,
+	ITALIC,
+	MAIN_COL,
+	ANTI_COL,
+	BLUE4_COL,
+	BLUE3_COL,
+	VIOLET1_COL,
+	XXXL,
 	XXL,
-	XXL_BOLD,
-	XXL_BLUE4,
 	XL,
-	XL_BLUE4,
 	L,
-	XL_BOLD,
-	L_BLUE4,
-	L_BOLD_BLUE4,
 	M,
-	M_BLUE4,
-	M_BOLD_BLUE4,
-	M_ITALIC_BLUE4,
 	S,
-	S_BLUE4,
+	XS,
 	UL,
-	S_UL,
 	OL,
-	S_OL,
 	LINK,
-	M_MAIN,
-	M_BOLD_MAIN,
-	S_MAIN,
-	S_BOLD_MAIN,
-	M_ANTI,
-	M_BOLD_ANTI,
-	L_BOLD,
 } from '../Components/Text'
 
 export const defaultTheme = {contentWidth: '64rem', gap: '1rem'}
@@ -57,132 +49,84 @@ const defaultTextTheme = {
 			${p => p.theme.text?.size?.m};
 		`,
 		size: {
-			xxl: 2.5, // rem
-			xl: 2,
-			l: 1.5,
+			xxxl: 2.5, // rem
+			xxl: 2,
+			xl: 1.5,
+			l: 1.2,
 			m: 1,
 			s: 0.9,
+			xs: 0.7,
 		},
 		font: css`
 			font-family: 'Quicksand', sans-serif;
 		`,
 
+		[XXXL]: css`
+			font-size: ${p => p.theme.text.size.xxxl}rem;
+			line-height: 1.1;
+		`,
 		[XXL]: css`
 			font-size: ${p => p.theme.text.size.xxl}rem;
 			line-height: 1.1;
 		`,
-		[XXL_BOLD]: css`
-			${p => p.theme.text[XXL]};
-			font-weight: 600;
-		`,
-		[XXL_BLUE4]: css`
-			${p => p.theme.text[XXL]};
-			color: ${BLUE4};
-		`,
-
 		[XL]: css`
 			font-size: ${p => p.theme.text.size.xl}rem;
-			line-height: 1.3;
+			line-height: 1.1;
 		`,
-		[XL_BOLD]: css`
-			${p => p.theme.text[XL]};
-			font-weight: 600;
-		`,
-		[XL_BLUE4]: css`
-			${p => p.theme.text[XL]};
-			color: ${BLUE4};
-		`,
-
 		[L]: css`
 			font-size: ${p => p.theme.text.size.l}rem;
-			line-height: 1.3;
+			line-height: 1.1;
 		`,
-		[L_BOLD]: css`
-			${p => p.theme.text[L]};
-			font-weight: 600;
-		`,
-		[L_BLUE4]: css`
-			${p => p.theme.text[L]};
-			color: ${BLUE4};
-		`,
-		[L_BOLD_BLUE4]: css`
-			${p => p.theme.text[L]};
-			font-weight: 600;
-			color: ${BLUE4};
-		`,
-
 		[M]: css`
 			font-size: ${p => p.theme.text.size.m}rem;
 			line-height: 1.8;
 		`,
-		[M_BLUE4]: css`
-			${p => p.theme.text[M]};
-			color: ${BLUE4};
-		`,
-		[M_MAIN]: css`
-			${p => p.theme.text[M]};
-			color: ${MAIN};
-		`,
-		[M_BOLD_MAIN]: css`
-			${p => p.theme.text[M]};
-			font-weight: 600;
-			color: ${MAIN};
-		`,
-		[M_ANTI]: css`
-			${p => p.theme.text[M]};
-			color: ${ANTI};
-		`,
-		[M_BOLD_ANTI]: css`
-			${p => p.theme.text[M]};
-			font-weight: 600;
-			color: ${ANTI};
-		`,
-		[M_BOLD_BLUE4]: css`
-			${p => p.theme.text[M]};
-			font-weight: 600;
-			color: ${BLUE4};
-		`,
-		[M_ITALIC_BLUE4]: css`
-			${p => p.theme.text[M]};
-			font-style: italic;
-			color: ${BLUE4};
-		`,
-
 		[S]: css`
 			font-size: ${p => p.theme.text.size.s}rem;
+			line-height: 1.8;
 		`,
-		[S_MAIN]: css`
-			${p => p.theme.text[S]};
-			color: ${MAIN};
+		[XS]: css`
+			font-size: ${p => p.theme.text.size.xs}rem;
 		`,
-		[S_BOLD_MAIN]: css`
-			${p => p.theme.text[S]};
+
+		[BOLD]: css`
 			font-weight: 600;
+		`,
+		[NORMAL]: css`
+			font-weight: 400;
+		`,
+		[THIN]: css`
+			font-weight: 300;
+		`,
+		[ITALIC]: css`
+			font-style: italic;
+		`,
+
+		[MAIN_COL]: css`
 			color: ${MAIN};
 		`,
-		[S_BLUE4]: css`
-			${p => p.theme.text[S]};
+		[ANTI_COL]: css`
+			color: ${ANTI};
+		`,
+		[BLUE4_COL]: css`
 			color: ${BLUE4};
+		`,
+		[BLUE3_COL]: css`
+			color: ${BLUE3};
+		`,
+		[VIOLET1_COL]: css`
+			color: ${VIOLET1};
 		`,
 
 		[UL]: css`
 			list-style: square outside;
+			line-height: 1.4;
 		`,
-		[S_UL]: css`
-			font-size: ${p => p.theme.text.size.s}rem;
-			${p => p.theme.text[UL]};
-		`,
-
 		[OL]: css`
 			list-style: decimal outside;
 		`,
-		[S_OL]: css`
-			font-size: ${p => p.theme.text.size.s}rem;
-			${p => p.theme.text[OL]};
-		`,
 
 		[LINK]: css`
-			font-weight: 600;
 			color: ${BLUE2};
 			:hover {
 				text-decoration: underline;

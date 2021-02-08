@@ -15,7 +15,7 @@ const mediaConditions = breakpoints => {
 	return media
 }
 
-const MediaQueryCtx = createContext(undefined)
+const MediaQueryCtx = createContext()
 const MediaQueryProvider = ({children}) => {
 	const [media, setMedia] = useState(mediaConditions(breakpoints))
 

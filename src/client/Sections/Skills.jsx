@@ -1,10 +1,10 @@
 import React from 'react'
 import {NarrowContentBox} from 'Components/Box'
 import {MAIN, VIOLET3_20, VIOLET2_20, VIOLET2, styled} from '../styles'
-import {SectionBox, SecTitle} from './MainPanel'
-import {L_BOLD, S_BOLD_MAIN, Text} from '../Components/Text'
+import {SectionBox, SecTitle} from '../Pages/Main'
+import {BOLD, L, MAIN_COL, S, Text} from '../Components/Text'
 import Box from '../Components/Box/Box'
-import {skillsDB} from '../settings'
+import {skillsDB} from './settings'
 import Mover from '../Components/Mover'
 import logos from 'assets/images/logos.png'
 import {useMediaQuery} from 'plugins/MediaQuery'
@@ -19,7 +19,7 @@ const Dot = styled(Box)`
 
 const Skill = ({label, score}) => (
 	<Box key={label} column left gap="0.5rem">
-		<Text set={S_BOLD_MAIN} uppercase>
+		<Text sets={[S, BOLD, MAIN_COL]} uppercase>
 			{label}
 		</Text>
 		<Box gap="0.5rem" left>
@@ -33,7 +33,7 @@ const Skill = ({label, score}) => (
 const SkillsGroups = ({groups}) => {
 	const {isPhone} = useMediaQuery()
 	return (
-		<Box gap="4rem" top left column={isPhone}>
+		<Box gap="4rem" top left={!isPhone} column={isPhone}>
 			{groups.map((arr, i) => (
 				<Box key={i} column left top gap inline>
 					{arr.map(({label, score}) => (
@@ -46,11 +46,12 @@ const SkillsGroups = ({groups}) => {
 }
 
 const SkillsPanel = ({skills}) => {
+	const {isPhone} = useMediaQuery()
 	return (
-		<Box top left column gap="3rem">
+		<Box top left={!isPhone} column gap="3rem">
 			{skills.map(({label, groups}) => (
-				<Box key={label} top left gap column>
-					<Text set={L_BOLD}>{label}</Text>
+				<Box key={label} top left={!isPhone} gap column>
+					<Text sets={[L, BOLD]}>{label}</Text>
 					<SkillsGroups {...{groups}} />
 				</Box>
 			))}
@@ -71,13 +72,13 @@ const Skills = ({id, label}) => {
 					gap: '1rem',
 				}}
 			>
-				<Box left padding="0 0 2rem" gap="3rem">
+				<Box left={!isPhone} padding="0 0 2rem" gap="3rem">
 					<SecTitle {...{label}} />
 					{!isPhone && (
 						<Mover
 							{...{
 								image: logos,
-								outerProps: {margin: '', rigth: true},
+								outerProps: {margin: '', right: true},
 							}}
 						/>
 					)}

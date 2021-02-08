@@ -52,7 +52,7 @@ class Arrow extends Component {
 				padding="0 2rem"
 				onClick={onClick}
 			>
-				<Text set={XXL} inline>
+				<Text sets={[XXL]} inline>
 					{flip ? '<' : '>'}
 				</Text>
 			</ArrowField>
