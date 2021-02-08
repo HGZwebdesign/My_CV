@@ -2,16 +2,14 @@ import {OUT_DIR, LOCAL_SERVER_PORT, APP_ICON_PATH} from '../../config'
 import express from 'express'
 import os from 'os'
 import path from 'path'
-// import apolloServer from '../../plugins/apollo/ApolloServer'
-import {sequelizeDbSync} from '../../plugins/sequelize'
 import favicon from 'serve-favicon'
 import debug from 'debug'
-import db from './database'
-
+// import apolloServer from '../../plugins/apollo/ApolloServer'
+// import {sequelizeDbSync} from '../../plugins/sequelize'
+// import db from './database'
 const expressDbg = debug('express')
 
 const {PORT = LOCAL_SERVER_PORT, PWD: ABSOLUTE_PATH} = process.env
-
 const app = express()
 
 const serveFavIcon = app =>
@@ -19,8 +17,9 @@ const serveFavIcon = app =>
 const serveStatic = app =>
 	app.use(express.static(path.join(ABSOLUTE_PATH, OUT_DIR)))
 
-// sequelize: create / update / drop the database
-sequelizeDbSync(db)
+// // sequelize: create / update / drop the database
+// sequelizeDbSync(db)
+
 // define favicon path
 serveFavIcon(app)
 // load static assets
