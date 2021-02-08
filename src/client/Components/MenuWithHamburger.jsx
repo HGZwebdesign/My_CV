@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {Box} from 'Components/Box'
 import {ANTI_COL, M, Text} from 'Components/Text'
 import {styled, css, MAIN, ANTI} from 'Styles'
@@ -71,7 +71,7 @@ const ListWrap = styled(Box)`
 		`}
 `
 
-const ListItem = ({id, label, sections}) => {
+const ListItem = ({id, label, sections, onClose}) => {
 	const [open, setOpen] = useState()
 	const {isPhone} = useMediaQuery()
 	return (
@@ -87,7 +87,7 @@ const ListItem = ({id, label, sections}) => {
 			<Box gap="3rem" spaceBetween>
 				<Box {...{inline: true, padding: '0.5rem'}}>
 					<ScrollLink to={`#${id}`} padding="2rem">
-						<Text sets={[M, ANTI_COL]}>
+						<Text sets={[M, ANTI_COL]} onClick={e => onClose(e)}>
 							{label
 								?.split('')
 								.map((n, i) => (i ? n : n.toUpperCase()))
@@ -112,7 +112,7 @@ const ListItem = ({id, label, sections}) => {
 			{open && (
 				<Box as="ul" top column left>
 					{sections?.map((item, i) => (
-						<ListItem key={i} {...item} />
+						<ListItem key={i} {...{...item, onClose}} />
 					))}
 				</Box>
 			)}
@@ -120,7 +120,7 @@ const ListItem = ({id, label, sections}) => {
 	)
 }
 
-const List = ({items}) => {
+const List = ({items, onClose}) => {
 	const {isPhone} = useMediaQuery()
 	if (!items) return false
 	return (
@@ -137,7 +137,7 @@ const List = ({items}) => {
 			{items
 				.filter(({noLink}) => !noLink)
 				.map((item, i) => (
-					<ListItem key={i} {...item} />
+					<ListItem key={i} {...{...item, onClose}} />
 				))}
 		</ListWrap>
 	)
@@ -181,18 +181,29 @@ const MenuWrap = styled(Box)`
 
 const MenuWithHamburger = ({items}) => {
 	const {isPhone} = useMediaQuery()
+	const menuCheckBox = useRef()
+
+	const handleClose = () => {
+		if (menuCheckBox?.current) menuCheckBox.current.checked = false
+	}
+
 	if (!items) return false
 	return (
 		<MenuWrap right>
 			{isPhone && (
 				<>
-					<MenuInput as="input" type="checkbox" id="menu-input" />
+					<MenuInput
+						as="input"
+						type="checkbox"
+						id="menu-input"
+						ref={menuCheckBox}
+					/>
 					<MenuLabel as="label" htmlFor="menu-input" inline cursor>
 						<MenuIcon />
 					</MenuLabel>
 				</>
 			)}
-			<List {...{items}} />
+			<List {...{items, onClose: handleClose}} />
 		</MenuWrap>
 	)
 }
