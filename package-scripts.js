@@ -20,7 +20,7 @@ module.exports = {
 	scripts: {
 		default: 'nps start', // heroku require default action in nps
 		start: {
-			default: `nps build prod`,
+			default: `nps build`,
 			inspect: `nps build prod.inspect`,
 		},
 		prod: {
