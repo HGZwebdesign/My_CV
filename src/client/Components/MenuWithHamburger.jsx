@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Box} from 'Components/Box'
-import {M_ANTI, Text} from 'Components/Text'
+import {ANTI_COL, M, Text} from 'Components/Text'
 import {styled, css, MAIN, ANTI} from 'Styles'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import ScrollLink from './ScrollLink'
@@ -87,7 +87,7 @@ const ListItem = ({id, label, sections}) => {
 			<Box gap="3rem" spaceBetween>
 				<Box {...{inline: true, padding: '0.5rem'}}>
 					<ScrollLink to={`#${id}`} padding="2rem">
-						<Text set={M_ANTI}>
+						<Text sets={[M, ANTI_COL]}>
 							{label
 								?.split('')
 								.map((n, i) => (i ? n : n.toUpperCase()))

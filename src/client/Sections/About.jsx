@@ -1,9 +1,10 @@
 import React from 'react'
 import {NarrowContentBox} from 'Components/Box'
 import {MAIN, VIOLET3_20, VIOLET2_20, styled} from '../styles'
-import {SectionBox, SecTitle} from './MainPanel'
-import {Text} from '../Components/Text'
+import {SectionBox, SecTitle} from '../Pages/Main'
+import {LINK, M, Text} from '../Components/Text'
 import Box from '../Components/Box/Box'
+import {GITHUB} from './settings'
 
 const SectionBoxBg = styled(SectionBox)`
 	background: linear-gradient(to bottom, ${VIOLET2_20} 0%, ${VIOLET3_20} 100%);
