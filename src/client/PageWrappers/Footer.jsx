@@ -8,7 +8,7 @@ import email from 'assets/icons/email.svg'
 import linkedin from 'assets/icons/linkedin.svg'
 import github from 'assets/icons/github.svg'
 import phone from 'assets/icons/phone.svg'
-import {EMAIL, GITHUB, LINKEDIN, TEL} from '../Sections/settings'
+import {EMAIL, GITHUB, LINKEDIN, TEL} from 'config/personal'
 
 const SvgImg = styled.img`
 	height: ${p => `${p.height || p.size}`};

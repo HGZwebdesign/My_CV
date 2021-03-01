@@ -10,6 +10,7 @@ import portrait from 'assets/images/portrait.png'
 import {SectionBox} from '../Pages/Main'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import ImageBox from '../Components/ImageBox'
+import {FIRST_NAME, LAST_NAME} from 'config/personal'
 
 const SectionBoxBg = styled(SectionBox)`
 	background-image: url(${p => p.img});
@@ -63,9 +64,11 @@ const Intro = ({id}) => {
 					<Box column gap left>
 						<Text sets={isPhone ? [M] : [L]}>MY NAME IS</Text>
 						<Box column left gap="0.2rem">
-							<Text sets={[isPhone ? XL : XXXL, BOLD]}>HANNA </Text>
-							<Text sets={[isPhone ? XL : XXXL, BOLD]}>
-								GAUDASIŃSKA-ZAPAŚNIK
+							<Text sets={[isPhone ? XL : XXXL, BOLD]} upperCase>
+								{FIRST_NAME}{' '}
+							</Text>
+							<Text sets={[isPhone ? XL : XXXL, BOLD]} upperCase>
+								{LAST_NAME}
 							</Text>
 						</Box>
 						<Box

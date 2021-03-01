@@ -2,10 +2,9 @@ import React from 'react'
 import {MAIN, WHITE} from '../styles'
 import {SectionBox, SecTitle} from '../Pages/Main'
 import {ContentBox, Box} from '../Components/Box'
-import {GITHUB, projectsDB} from './settings'
 import {BOLD, LINK, M, MAIN_COL, Text} from '../Components/Text'
-import ImageBox from '../Components/ImageBox'
 import {useMediaQuery} from 'plugins/MediaQuery'
+import {GITHUB} from 'config/personal'
 
 const Portfolio = ({id, label}) => {
 	const {isPhone} = useMediaQuery()

@@ -3,7 +3,7 @@ import {Box, ContentBox} from 'Components/Box'
 import {MAIN, ANTI, Theme, headerTextTheme} from 'Styles'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import MenuWithHamburger from 'Components/MenuWithHamburger'
-import {sections} from '../Sections/settings'
+import {sections} from 'config/sections'
 import styled from 'styled-components'
 
 const WrapBox = styled(Box)`

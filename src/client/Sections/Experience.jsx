@@ -3,7 +3,7 @@ import React, {Fragment} from 'react'
 import {Box, NarrowContentBox} from 'Components/Box'
 import {SectionBox, SecTitle} from '../Pages/Main'
 import {ANTI, MAIN, VIOLET2_20} from '../styles'
-import {jobsDB, eduDB, workshopsDB} from './settings'
+import {jobsDB, eduDB, workshopsDB} from 'config/sections'
 import {
 	M,
 	XS,
