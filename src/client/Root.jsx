@@ -1,6 +1,6 @@
 import React from 'react'
 import {GlobalStyle, Theme, defaultThemesSet} from 'Styles'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {HashRouter, Route, Switch} from 'react-router-dom'
 import {Header, Footer} from './PageWrappers'
 import MediaQueryProvider from 'plugins/MediaQuery'
 import PageWrap from './Components/PageWrap'
@@ -11,15 +11,17 @@ const App = () => {
 	return (
 		<Theme theme={defaultThemesSet}>
 			<MediaQueryProvider>
-				<BrowserRouter>
+				<HashRouter>
 					<GlobalStyle />
 					<MetaData />
-					<PageWrap header={<Header />} footer={<Footer />}>
-						{pages.map(({path, exact, component}, i) => (
-							<Route key={i} {...{exact, path: `/${path}`, component}} />
-						))}
-					</PageWrap>
-				</BrowserRouter>
+					<Switch>
+						<PageWrap header={<Header />} footer={<Footer />}>
+							{pages.map(({path, exact, component}, i) => (
+								<Route key={i} {...{exact, path: `/${path}`, component}} />
+							))}
+						</PageWrap>
+					</Switch>
+				</HashRouter>
 			</MediaQueryProvider>
 		</Theme>
 	)
