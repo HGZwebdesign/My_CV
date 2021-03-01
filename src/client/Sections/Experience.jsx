@@ -17,8 +17,6 @@ import {
 	XL,
 	L,
 } from '../Components/Text'
-// import {useReactToPrint} from 'react-to-print'
-// import {Button} from '../Components/Button'
 
 import styled from 'styled-components'
 import {makeDate} from '../helpers'
@@ -32,6 +30,10 @@ const Card = ({start, end, main, sub, desc, descArr}) => {
 	const startStr = makeDate(start)
 	const endStr = makeDate(end)
 	const date = `${startStr} - ${endStr ? endStr : ''}`
+
+	const descSingle = descArr?.length === 1 && descArr[0]
+	const descMulti = descArr?.length > 1 && descArr
+
 	return (
 		<Box
 			{...{
@@ -54,10 +56,10 @@ const Card = ({start, end, main, sub, desc, descArr}) => {
 					<Text sets={[L, BOLD, MAIN_COL]}>{main}</Text>
 					<Text sets={[isPhone ? S : M, BOLD, VIOLET1_COL]}>{sub}</Text>
 				</Box>
-				{desc && <Text sets={[S, THIN]}>{desc}</Text>}
-				{descArr && (
+				{descSingle && <Text sets={[S, THIN]}>{descSingle}</Text>}
+				{descMulti && (
 					<Box left column gap="0.5rem" as="ul" padding="0 0 0 1rem">
-						{descArr.map((s, i) => (
+						{descMulti.map((s, i) => (
 							<Text key={i} sets={[S, UL, THIN]} as="li">
 								{s}
 							</Text>
