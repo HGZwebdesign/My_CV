@@ -3,8 +3,8 @@ import {Box, NarrowContentBox} from 'Components/Box'
 import styled from 'styled-components'
 import bgImage from 'assets/images/bg.jpg'
 import bgImageMin from 'assets/images/bg.min.jpg'
-import {ANTI, MAIN, BLUE5, VIOLET2} from '../styles'
-import {BOLD, L, M, Text, XL, XXL, XXXL} from '../Components/Text'
+import {ANTI, MAIN, BLUE1, VIOLET2} from '../styles'
+import {BOLD, L, M, Text, XL, XXXL} from '../Components/Text'
 import portraitMin from 'assets/images/portrait.min.png'
 import portrait from 'assets/images/portrait.png'
 import {SectionBox} from '../Pages/Main'
@@ -22,7 +22,7 @@ const ImgBox = styled(ImageBox)`
 	width: ${p => `calc(${p.size * 0.75}vh)`};
 	height: ${p => `${p.size}vh`};
 
-	box-shadow: inset 0px 0px 48px 35px ${BLUE5};
+	box-shadow: inset 0px 0px 48px 35px ${BLUE1};
 `
 
 const TextBox = styled(Box)`

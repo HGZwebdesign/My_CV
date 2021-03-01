@@ -1,5 +1,5 @@
 import React from 'react'
-import {styled, VIOLET3_20, Trans} from '../styles'
+import {styled, VIOLET3_20, TRANS} from '../styles'
 import Box from '../Components/Box/Box'
 
 const Outer = styled(Box)`
@@ -19,8 +19,8 @@ const SideShadow = styled(Box)`
 	background: linear-gradient(
 		${p => (p.right ? '-90' : '90')}deg,
 		${VIOLET3_20} 0%,
-		${Trans} ${p => p.range || '5%'},
-		${Trans} calc(100% - ${p => p.range || '5%'}),
+		${TRANS} ${p => p.range || '5%'},
+		${TRANS} calc(100% - ${p => p.range || '5%'}),
 		${VIOLET3_20} 100%
 	);
 `

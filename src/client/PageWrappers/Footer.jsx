@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {MAIN, ANTI, WHITE, VIOLET3, VIOLET1} from 'Styles'
+import {MAIN, ANTI, WHITE, VIOLET1} from 'Styles'
 import {Box, ContentBox} from 'Components/Box'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import {S, Text} from '../Components/Text'
@@ -37,7 +37,6 @@ const LinkBox = ({src, size = '2rem', href, showBanner}) => {
 		<LinkBoxWrap
 			{...{
 				bg: WHITE,
-				fg: VIOLET3,
 				inline: true,
 				radius: 'round',
 				size,
