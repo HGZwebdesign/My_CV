@@ -1,6 +1,6 @@
 # My Curriculum Vitae
 
-**Link:** https://hgz-cv.herokuapp.com (Please, wait ~30 sec. The app may hibernate in Heroku free mode)
+**Link:** https://hgzdev.github.io/cv
 
 My introduction website containing CV and portfolio.
 
