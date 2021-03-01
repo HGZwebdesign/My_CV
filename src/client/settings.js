@@ -1,15 +1,19 @@
-import MainPanel from './Pages/Main'
+import CV from './Pages/CV'
+import Main from './Pages/Main'
+
+export const PRINTABLE_PATH = 'summary'
+export const PRINTABLE_LABEL = 'CV (printable)'
 
 export const pages = [
 	{
 		exact: true,
-		path: '/',
+		path: '',
 		label: 'Main',
-		component: MainPanel,
+		component: Main,
 	},
-	// {
-	// 	path: `/${ABOUT}`,
-	// 	label: 'About',
-	// 	component: About,
-	// },
+	{
+		path: PRINTABLE_PATH,
+		label: 'CV',
+		component: CV,
+	},
 ]

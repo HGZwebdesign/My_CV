@@ -5,7 +5,8 @@ import {Header, Footer} from './PageWrappers'
 import MediaQueryProvider from 'plugins/MediaQuery'
 import PageWrap from './Components/PageWrap'
 import {MetaData} from './Components/MetaData'
-import {pages} from './settings'
+import {pages, PRINTABLE_PATH} from './settings'
+import CV from './Pages/CV'
 
 const App = () => {
 	return (
@@ -15,6 +16,7 @@ const App = () => {
 					<GlobalStyle />
 					<MetaData />
 					<Switch>
+						<Route path={`/${PRINTABLE_PATH}`} component={CV} />
 						<PageWrap header={<Header />} footer={<Footer />}>
 							{pages.map(({path, exact, component}, i) => (
 								<Route key={i} {...{exact, path: `/${path}`, component}} />

@@ -1,9 +1,24 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import {Box} from 'Components/Box'
 import {ANTI_COL, M, Text} from 'Components/Text'
 import {styled, css, MAIN, ANTI} from 'Styles'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import ScrollLink from './ScrollLink'
+import {PRINTABLE_LABEL, PRINTABLE_PATH} from '../settings'
+import {Link} from 'react-router-dom'
+
+export const CVLink = ({path = PRINTABLE_PATH, label = PRINTABLE_LABEL}) => (
+	<Box {...{inline: true, padding: '0.5rem'}}>
+		<Link to={`/${path}${location.search}`}>
+			<Text sets={[M, ANTI_COL]}>
+				{label
+					?.split('')
+					.map((n, i) => (i ? n : n.toUpperCase()))
+					.join('')}
+			</Text>
+		</Link>
+	</Box>
+)
 
 const MenuInput = styled(Box)``
 
@@ -139,6 +154,8 @@ const List = ({items, onClose}) => {
 				.map((item, i) => (
 					<ListItem key={i} {...{...item, onClose}} />
 				))}
+
+			<CVLink />
 		</ListWrap>
 	)
 }
