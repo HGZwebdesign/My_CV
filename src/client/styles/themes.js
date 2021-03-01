@@ -1,6 +1,6 @@
 /* eslint-disable complexity */
 import {css} from 'styled-components'
-import {ACCENT, BLUE4, WHITE, BLUE2, ANTI, MAIN, VIOLET1, BLUE3} from './colors'
+import {ACCENT, BLUE4, WHITE, ANTI, MAIN, VIOLET1, BLUE1} from './colors'
 
 import {
 	BOLD,
@@ -10,7 +10,7 @@ import {
 	MAIN_COL,
 	ANTI_COL,
 	BLUE4_COL,
-	BLUE3_COL,
+	BLUE1_COL,
 	VIOLET1_COL,
 	XXXL,
 	XXL,
@@ -34,7 +34,7 @@ const defaultColorsTheme = {
 				background-color: ${p.bg || p.theme.bg};
 
 				transition: 0.5s;
-				& :hover {
+				:hover {
 					color: ${p.hoverFg || p.theme.hoverFg};
 					background-color: ${p.hoverBg || p.theme.hoverBg};
 				}
@@ -46,7 +46,7 @@ const defaultTextTheme = {
 	text: {
 		css: css`
 			${p => p.theme.text?.font};
-			${p => p.theme.text?.size?.m};
+			font-size: ${p => p.theme.text?.size?.m}rem;
 		`,
 		size: {
 			xxxl: 2.5, // rem
@@ -108,11 +108,11 @@ const defaultTextTheme = {
 		[ANTI_COL]: css`
 			color: ${ANTI};
 		`,
+		[BLUE1_COL]: css`
+			color: ${BLUE1};
+		`,
 		[BLUE4_COL]: css`
 			color: ${BLUE4};
-		`,
-		[BLUE3_COL]: css`
-			color: ${BLUE3};
 		`,
 		[VIOLET1_COL]: css`
 			color: ${VIOLET1};
@@ -127,7 +127,6 @@ const defaultTextTheme = {
 		`,
 
 		[LINK]: css`
-			color: ${BLUE2};
 			:hover {
 				text-decoration: underline;
 				color: ${ACCENT};
@@ -251,83 +250,23 @@ export const defaultAppBoxTheme = {
 	`,
 }
 
-// TODO button styling
-// export const defaultButtonTheme = {
-// 	button: {
-// 		clr,
-// 		disabledClr,
-// 		btnLength: {
-// 			compact: 0.4,
-// 			long: 1.5,
-// 		},
-// 		btnHeight: {
-// 			xsmall: 1.2,
-// 			small: 1.5,
-// 			medium: 1.9,
-// 			large: 2.5,
-// 			xlarge: 3,
-// 		},
-// 		textCss: css`
-// 			/* only basic text styling props: font-size, font-style */
-// 		`,
-// 		focusCss: css``,
-// 		css: css`
-// 			${p => p.theme.button.focusCss || p.theme.focusCss};
-// 			${p => {
-// 				const btnLength =
-// 					p.theme.button?.btnLength &&
-// 					Object.entries(p.theme.button?.btnLength).find(obj => p[obj[0]])?.[1]
-
-// 				const btnHeight =
-// 					(p.theme.button?.btnHeight &&
-// 						Object.entries(p.theme.button?.btnHeight).find(
-// 							obj => p[obj[0]]
-// 						)?.[1]) ||
-// 					1.8
-
-// 				return {
-// 					padding: p.padding
-// 						? p.padding
-// 						: `0 ${btnLength ? btnHeight * btnLength : btnHeight / 2}rem`,
-// 					minHeight:
-// 						p.padding || p.minHeight || (btnHeight && `${btnHeight}rem`),
-// 					width: p.width || (p.fullWidth && '100%'),
-// 					// Never overflow containers
-// 					maxWidth: p.maxWidth || '100%',
-
-// 					whiteSpace: p.wrap ? 'normal' : 'nowrap',
-// 					// left/right props align text in children tags: <p>text</p>
-// 					textAlign: p.left ? 'left' : p.right && 'right',
-
-// 					color: p.disabled
-// 						? getHint({...p, clr: null}, 'button.disabledClr')
-// 						: getFg(p, 'button.clr'),
-// 					backgroundColor: p.disabled
-// 						? getBg({...p, clr: null}, 'button.disabledClr')
-// 						: getBg(p, 'button.clr'),
-// 					border:
-// 						p.border && p.disabled
-// 							? `thin solid ${getFg({...p, clr: null}, 'button.disabledClr')}`
-// 							: p.disabled
-// 							? `thin solid ${getBg({...p, clr: null}, 'button.disabledClr')}`
-// 							: p.border
-// 							? `thin solid ${getFg({...p, clr: null}, 'button.clr')}`
-// 							: `thin solid ${getBg({...p, clr: null}, 'button.clr')}`,
-
-// 					transition: p.theme.transition,
-// 					'&:hover': !p.disabled &&
-// 						!p.noHover && {
-// 							color: getHoverFg(p, 'button.clr'),
-// 							backgroundColor: getHoverBg(p, 'button.clr'),
-// 							border: p.border && `thin solid ${getHoverFg(p, 'button.clr')}`,
-// 						},
-// 					'&:focus': p.disabled && {outline: 'none', boxShadow: 'none'},
-// 				}
-// 			}};
-// 			${p => p.theme.button?.textCss};
-// 		`,
-// 	},
-// }
+export const CVTextTheme = {
+	text: {
+		size: {
+			xxxl: 2.5, // rem
+			xxl: 2,
+			xl: 1.5,
+			l: 1,
+			m: 0.8,
+			s: 0.6,
+			xs: 0.5,
+		},
+		[M]: css`
+			font-size: ${p => p.theme.text.size.m}rem;
+			line-height: 1.3;
+		`,
+	},
+}
 
 export const defaultThemesSet = [
 	defaultTheme,

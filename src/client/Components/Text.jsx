@@ -14,7 +14,7 @@ export const ITALIC = 'ITALIC'
 export const MAIN_COL = 'MAIN_COL'
 export const ANTI_COL = 'ANTI_COL'
 export const BLUE4_COL = 'BLUE4_COL'
-export const BLUE3_COL = 'BLUE3_COL'
+export const BLUE1_COL = 'BLUE1_COL'
 export const VIOLET1_COL = 'VIOLET1_COL'
 export const UL = 'UL'
 export const OL = 'OL'
@@ -22,8 +22,6 @@ export const LINK = 'LINK'
 
 export const Text = styled.span`
 	${p => p.theme.text?.css};
-
-	${p => p.theme.text?.[p.set]};
 	${p => p.sets?.map(set => p.theme.text?.[set])}
 
 	${p => p.upperCase && `text-transform: uppercase`};

@@ -3,13 +3,14 @@ import {Box, NarrowContentBox} from 'Components/Box'
 import styled from 'styled-components'
 import bgImage from 'assets/images/bg.jpg'
 import bgImageMin from 'assets/images/bg.min.jpg'
-import {ANTI, MAIN, BLUE5, VIOLET2} from '../styles'
-import {BOLD, L, M, Text, XL, XXL, XXXL} from '../Components/Text'
+import {ANTI, MAIN, BLUE1, VIOLET2} from '../styles'
+import {BOLD, L, M, Text, XL, XXXL} from '../Components/Text'
 import portraitMin from 'assets/images/portrait.min.png'
 import portrait from 'assets/images/portrait.png'
 import {SectionBox} from '../Pages/Main'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import ImageBox from '../Components/ImageBox'
+import {FIRST_NAME, LAST_NAME} from 'config/personal'
 
 const SectionBoxBg = styled(SectionBox)`
 	background-image: url(${p => p.img});
@@ -22,7 +23,7 @@ const ImgBox = styled(ImageBox)`
 	width: ${p => `calc(${p.size * 0.75}vh)`};
 	height: ${p => `${p.size}vh`};
 
-	box-shadow: inset 0px 0px 48px 35px ${BLUE5};
+	box-shadow: inset 0px 0px 48px 35px ${BLUE1};
 `
 
 const TextBox = styled(Box)`
@@ -63,9 +64,11 @@ const Intro = ({id}) => {
 					<Box column gap left>
 						<Text sets={isPhone ? [M] : [L]}>MY NAME IS</Text>
 						<Box column left gap="0.2rem">
-							<Text sets={[isPhone ? XL : XXXL, BOLD]}>HANNA </Text>
-							<Text sets={[isPhone ? XL : XXXL, BOLD]}>
-								GAUDASIŃSKA-ZAPAŚNIK
+							<Text sets={[isPhone ? XL : XXXL, BOLD]} upperCase>
+								{FIRST_NAME}{' '}
+							</Text>
+							<Text sets={[isPhone ? XL : XXXL, BOLD]} upperCase>
+								{LAST_NAME}
 							</Text>
 						</Box>
 						<Box

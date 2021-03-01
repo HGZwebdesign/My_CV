@@ -3,7 +3,7 @@ import React, {Fragment} from 'react'
 import {Box, NarrowContentBox} from 'Components/Box'
 import {SectionBox, SecTitle} from '../Pages/Main'
 import {ANTI, MAIN, VIOLET2_20} from '../styles'
-import {jobsDB, eduDB, workshopsDB} from './settings'
+import {jobsDB, eduDB, workshopsDB} from 'config/sections'
 import {
 	M,
 	XS,
@@ -21,16 +21,11 @@ import {
 // import {Button} from '../Components/Button'
 
 import styled from 'styled-components'
+import {makeDate} from '../helpers'
 
 const Line = styled(Box)`
 	border-top: 2px dashed ${MAIN};
 `
-
-const makeDate = dateArr =>
-	dateArr?.length &&
-	[dateArr[0], dateArr[1] < 10 ? ('0' + dateArr[1]).slice(-2) : dateArr[1]]
-		.reverse()
-		.join('.')
 
 const Card = ({start, end, main, sub, desc, descArr}) => {
 	const {isPhone} = useMediaQuery()

@@ -6,13 +6,7 @@ import {
 	PORTFOLIO,
 	SKILLS,
 } from 'src/constants'
-import {About, Experience, Intro, Portfolio, Skills} from '.'
-// import Logos from './Logos'
-
-export const EMAIL = 'hgz.devi@gmail.com'
-export const TEL = '+48 506 042 937'
-export const GITHUB = 'https://github.com/HGZdev'
-export const LINKEDIN = 'https://www.linkedin.com/in/hanna-gaudasinska-zapasnik'
+import {About, Experience, Intro, Portfolio, Skills} from 'src/client/Sections'
 
 export const sections = [
 	{id: INTRO, label: 'intro', Component: Intro},
@@ -32,6 +26,14 @@ export const sections = [
 	},
 	{id: EXPERIENCE, label: 'experience', Component: Experience},
 	{id: FOOTER, label: 'contact'},
+]
+
+export const aboutDB = [
+	"I am a software programmer with 3-years' professional experience, specializing in website development.",
+	"My field of expertise ranges from front-end to 'soft' back-end technologies. During my career I was involved in user-interfaces creation as well as client-server communication, databases architecture design and testing. Moreover my experience gained in the previous profession of a market researcher allows me to successfully play the role of a client liaison in the field of technological analysis of requirements, functionalities implementation and training.",
+	'Programming is one of my passions too, which confronts me with many interesting challenges everyday. Solving them gives me a lot of joy and satisfaction.',
+	'I am looking for job opportunities that will allow me to utilize my potential and broaden my skills and knowledge comprehensively, under the guidance of experienced mentors.',
+	'I kindly invite you to look at my GitHub portfolio.',
 ]
 
 export const skillsDB = [
@@ -147,6 +149,7 @@ export const jobsDB = {
 			descArr: [
 				'Preparation of an audioguide tour around Krakowskie Przedmieście St. in Warsaw',
 			],
+			subHiddenInCV: true,
 		},
 		{
 			start: [2013, 5],
@@ -166,6 +169,8 @@ export const jobsDB = {
 			descArr: [
 				'Delivery of monthly market sales reports, presentations and practicing various types of analysis for cosmetics and food companies',
 			],
+			// subHiddenInCV: true,
+			descHiddenInCV: true,
 		},
 		{
 			start: [2010, 6],
@@ -176,6 +181,8 @@ export const jobsDB = {
 				'Update & delivery of monthly cosmetics market sales reports',
 				'Ordering and coordination of quantitative and qualitative surveys',
 			],
+			// subHiddenInCV: true,
+			descHiddenInCV: true,
 		},
 	],
 }
@@ -187,21 +194,23 @@ export const eduDB = {
 			start: [2005, 9],
 			end: [2012, 7],
 			main: 'University of Warsaw – the Faculty of Economic Sciences',
-			desc: 'Specialization: Business Economics (MA 2012)',
+			descArr: ['Specialization: Business Economics (MA 2012)'],
 		},
 		{
 			start: [2007, 9],
 			end: [2012, 6],
 			main: 'University of Warsaw – the Institute of Sociology',
-			desc:
+			descArr: [
 				'Specialization: Social and Market Research (MA Certificate of Completion 2012)',
+			],
 		},
 		{
 			start: [2010, 1],
 			end: [2010, 6],
 			main: 'University College of Maastricht, Netherlands',
-			desc:
+			descArr: [
 				'Student Exchange Erasmus Programme, specialization: Social Science',
+			],
 		},
 	],
 }
@@ -212,26 +221,27 @@ export const workshopsDB = {
 		{
 			start: [2017, 9],
 			main: 'Conference Google Developer Days in Kraków',
-			desc:
+			descArr: [
 				'Participation in workshops on Progressive Web Design, Firebase and Google Maps',
+			],
 		},
 		{
 			start: [2017, 4],
 			end: [2017, 6],
 			main: 'Coders Lab – bootcamp: "Become Front-End Developer"',
-			desc: 'Intensive training for Front-end developer (240h)',
+			descArr: ['Intensive training for Front-end developer (240h)'],
 		},
 		{
 			start: [2016, 2],
 			end: [2016, 6],
 			main: 'Delfin English School, London, United Kingdom',
-			desc: 'General English Course, level: advanced C1+ (150h)',
+			descArr: ['General English Course, level: advanced C1+ (150h)'],
 		},
 		{
 			start: [2014, 10],
 			end: [2014, 11],
 			main: 'Open University UW – MS Excel & VBA course',
-			desc: 'MS Excel work automation with macros and VBA (60h)',
+			descArr: ['MS Excel work automation with macros and VBA (60h)'],
 		},
 	],
 }

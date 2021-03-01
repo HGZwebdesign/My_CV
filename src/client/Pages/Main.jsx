@@ -1,6 +1,6 @@
 import React from 'react'
 import Box from '../Components/Box/Box'
-import {sections} from '../Sections/settings'
+import {sections} from 'config/sections'
 import {BOLD, Text, XL, XXL} from '../Components/Text'
 import {MAIN, ANTI, ACCENT, styled} from 'Styles'
 import {useMediaQuery} from 'plugins/MediaQuery'
