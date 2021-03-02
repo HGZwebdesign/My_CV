@@ -6,6 +6,7 @@ import {BOLD, L, MAIN_COL, S, Text} from '../Components/Text'
 import Box from '../Components/Box/Box'
 import {skillsDB} from 'config/sections'
 import {useMediaQuery} from 'plugins/MediaQuery'
+import TagsCloud from '../Components/TagsCloud2'
 
 const Dot = styled(Box)`
 	width: ${p => p.size || '1.5rem'};
@@ -59,6 +60,11 @@ const SkillsPanel = ({skills}) => {
 
 const Skills = ({id, label}) => {
 	const {isPhone} = useMediaQuery()
+
+	const tags = skillsDB
+		.flatMap(list => list.groups.flatMap(gr => gr))
+		.map(({label, score}) => ({value: label, count: score}))
+
 	return (
 		<SectionBox {...{bg: VIOLET3_20, fg: MAIN, id, top: true}}>
 			<NarrowContentBox
@@ -66,13 +72,13 @@ const Skills = ({id, label}) => {
 					top: true,
 					padding: isPhone ? '3rem 0' : '4rem 0',
 					column: true,
-					left: true,
 					gap: '1rem',
 				}}
 			>
 				<Box left={!isPhone} padding="0 0 2rem" gap="3rem">
 					<SecTitle {...{label}} />
 				</Box>
+				{/* <TagsCloud {...{tags}} /> */}
 				<SkillsPanel {...{skills: skillsDB}} />
 			</NarrowContentBox>
 		</SectionBox>
