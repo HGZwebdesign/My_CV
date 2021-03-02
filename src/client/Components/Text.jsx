@@ -25,7 +25,6 @@ export const Text = styled.span`
 	${p => p.sets?.map(set => p.theme.text?.[set])}
 
 	${p => p.upperCase && `text-transform: uppercase`};
-
 	${p => p.cursor && `cursor: pointer`};
 
 	transition: 0.5s;

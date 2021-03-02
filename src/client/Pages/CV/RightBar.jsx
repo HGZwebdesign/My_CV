@@ -1,16 +1,23 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import {Box} from 'Components/Box'
 import {styled, CV_DARKER, CV_DARK, CV_LIGHTER, WHITE, BLACK_50} from 'Styles'
 import {BOLD, ITALIC, L, M, S, Text, THIN, UL, XS} from '../../Components/Text'
 import {consentDB, introDB, rightListDB} from 'config/cv'
 import {makeDate} from 'src/client/helpers'
+import KeySkills from './KeySkills'
+import {CV_LIGHT} from 'src/client/styles/index'
 
 const LineBox = styled(Box)`
 	border-top: solid ${CV_DARKER} 1px;
 	border-bottom: solid ${CV_DARKER} 1px;
 `
 
-const RightTitle = ({title}) => (
+const Line = styled(Box)`
+	width: 90%;
+	border-top: 1px dashed ${CV_LIGHT};
+`
+
+export const RightTitle = ({title}) => (
 	<LineBox {...{padding: '0.4rem 0'}} left>
 		<Text sets={[L]}>{title}</Text>
 	</LineBox>
@@ -58,27 +65,16 @@ const Card = ({
 	)
 }
 
-const KeySkills = () => {
-	return (
-		<Box {...{gap: '0.5rem'}} column>
-			<RightTitle {...{title: 'Key skills'}} />
-			<Box gap="0.5rem" column left>
-				<Box height="4rem">[Placeholder]</Box>
-				{/* {items.map((job, i) => (
-					<Card key={i} {...job} />
-				))} */}
-			</Box>
-		</Box>
-	)
-}
-
 const RightList = ({title, items}) => {
 	return (
 		<Box {...{gap: '0.5rem'}} column>
 			<RightTitle {...{title}} />
-			<Box gap="0.5rem" column left>
+			<Box gap="0.5rem" column>
 				{items.map((job, i) => (
-					<Card key={i} {...job} />
+					<Fragment key={i}>
+						<Card {...job} />
+						{job.addBreak && <Line />}
+					</Fragment>
 				))}
 			</Box>
 		</Box>

@@ -5,8 +5,6 @@ import {SectionBox, SecTitle} from '../Pages/Main'
 import {BOLD, L, MAIN_COL, S, Text} from '../Components/Text'
 import Box from '../Components/Box/Box'
 import {skillsDB} from 'config/sections'
-import Mover from '../Components/Mover'
-import logos from 'assets/images/logos.png'
 import {useMediaQuery} from 'plugins/MediaQuery'
 
 const Dot = styled(Box)`
@@ -74,14 +72,6 @@ const Skills = ({id, label}) => {
 			>
 				<Box left={!isPhone} padding="0 0 2rem" gap="3rem">
 					<SecTitle {...{label}} />
-					{!isPhone && (
-						<Mover
-							{...{
-								image: logos,
-								outerProps: {margin: '', right: true},
-							}}
-						/>
-					)}
 				</Box>
 				<SkillsPanel {...{skills: skillsDB}} />
 			</NarrowContentBox>

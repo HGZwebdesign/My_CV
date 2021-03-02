@@ -70,7 +70,7 @@ export const skillsDB = [
 			],
 			[
 				{label: 'Jest', score: 4},
-				{label: 'cypress.js', score: 2},
+				{label: 'Cypress.js', score: 2},
 			],
 			[
 				{label: 'COREL Photo-paint', score: 4},
@@ -85,7 +85,6 @@ export const skillsDB = [
 			[
 				{label: 'Polish', score: 6},
 				{label: 'English', score: 5},
-				{label: 'Russian', score: 1},
 			],
 		],
 	},
@@ -135,8 +134,8 @@ export const jobsDB = {
 			descArr: [
 				'Website development for Belgian companies and non-profit organizations',
 				'Modern user-interfaces creation (React.js, Final-form, styled-components and more)',
-				'Co-design of the apps architecture based on the StratoKit/strato-db engine (SQlite, graphQL, Node.js)',
-				'Unit-, integration- and end-to-end testing (Jest, cypress.js)',
+				'Co-design of the apps architecture based on the StratoKit/strato-db engine (SQlite, GraphQL, Node.js, Redux-like events flow)',
+				'Unit-, integration- and end-to-end testing (Jest, Cypress.js)',
 				'Client liaison: recognition of the needs and their technological implementation',
 			],
 			addBreak: true,
