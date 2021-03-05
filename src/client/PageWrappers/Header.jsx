@@ -14,11 +14,11 @@ const WrapBox = styled(Box)`
 
 const Header = () => {
 	const {isPhone} = useMediaQuery()
-	const [headerWidth, setHeaderWidth] = useState(1.5)
+	const [headerWidth, setHeaderWidth] = useState(1.1)
 
 	const listenScrollEvent = () => {
 		// eslint-disable-next-line no-unused-expressions
-		window.scrollY > 100 ? setHeaderWidth(0.5) : setHeaderWidth(1.5)
+		window.scrollY > 100 ? setHeaderWidth(0.2) : setHeaderWidth(1.1)
 	}
 
 	useEffect(() => {
