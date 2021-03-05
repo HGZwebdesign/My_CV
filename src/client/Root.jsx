@@ -8,24 +8,27 @@ import {MetaData} from './Components/MetaData'
 import {pages, PRINTABLE_PATH} from './settings'
 import CV from './Pages/CV'
 import ScrollToTop from './Components/ScrollToTop'
+import {ParallaxProvider} from 'react-scroll-parallax'
 
 const App = () => {
 	return (
 		<Theme theme={defaultThemesSet}>
 			<MediaQueryProvider>
-				<HashRouter>
-					<GlobalStyle />
-					<ScrollToTop />
-					<MetaData />
-					<Switch>
-						<Route path={`/${PRINTABLE_PATH}`} component={CV} />
-						<PageWrap header={<Header />} footer={<Footer />}>
-							{pages.map(({path, exact, component}, i) => (
-								<Route key={i} {...{exact, path: `/${path}`, component}} />
-							))}
-						</PageWrap>
-					</Switch>
-				</HashRouter>
+				<ParallaxProvider>
+					<HashRouter>
+						<GlobalStyle />
+						<ScrollToTop />
+						<MetaData />
+						<Switch>
+							<Route path={`/${PRINTABLE_PATH}`} component={CV} />
+							<PageWrap header={<Header />} footer={<Footer />}>
+								{pages.map(({path, exact, component}, i) => (
+									<Route key={i} {...{exact, path: `/${path}`, component}} />
+								))}
+							</PageWrap>
+						</Switch>
+					</HashRouter>
+				</ParallaxProvider>
 			</MediaQueryProvider>
 		</Theme>
 	)
