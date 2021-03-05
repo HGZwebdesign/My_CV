@@ -11,6 +11,7 @@ import {SectionBox} from '../Pages/Main'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import ImageBox from '../Components/ImageBox'
 import {FIRST_NAME, LAST_NAME} from 'config/personal'
+import {ParallaxBanner} from 'react-scroll-parallax'
 
 const SectionBoxBg = styled(SectionBox)`
 	background-image: url(${p => p.img});
@@ -55,7 +56,7 @@ const Intro = ({id}) => {
 				bg: MAIN,
 				fg: ANTI,
 				id,
-				minHeight: '100vh',
+				minHeight: '110vh',
 				img: loadedImg2 || bgImageMin,
 			}}
 		>
@@ -83,10 +84,23 @@ const Intro = ({id}) => {
 						</Box>
 					</Box>
 				</TextBox>
-				<ImgBox size={70} src={loadedImg || portraitMin} />
+				<ImgBox
+					{...{margin: '5rem 0 0', size: 70, src: loadedImg || portraitMin}}
+				/>
 			</NarrowContentBox>
 		</SectionBoxBg>
 	)
 }
 
-export default Intro
+const IntroInParallax = props => {
+	const {isTablet} = useMediaQuery()
+	return (
+		<ParallaxBanner
+			disabled={isTablet}
+			style={{height: '100vh'}}
+			layers={[{amount: 0.1, children: <Intro {...props} />}]}
+		/>
+	)
+}
+
+export default IntroInParallax
