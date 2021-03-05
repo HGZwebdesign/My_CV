@@ -7,6 +7,7 @@ import PageWrap from './Components/PageWrap'
 import {MetaData} from './Components/MetaData'
 import {pages, PRINTABLE_PATH} from './settings'
 import CV from './Pages/CV'
+import ScrollToTop from './Components/ScrollToTop'
 
 const App = () => {
 	return (
@@ -14,6 +15,7 @@ const App = () => {
 			<MediaQueryProvider>
 				<HashRouter>
 					<GlobalStyle />
+					<ScrollToTop />
 					<MetaData />
 					<Switch>
 						<Route path={`/${PRINTABLE_PATH}`} component={CV} />
