@@ -11,7 +11,6 @@ import {About, Experience, Intro, Portfolio, Skills} from 'src/client/Sections'
 export const sections = [
 	{id: INTRO, label: 'intro', Component: Intro},
 	{id: ABOUT, label: 'about me', Component: About},
-	// {id: 'logos', label: 'logos', Component: Logos, noLink: true},
 	{id: SKILLS, label: 'skills', Component: Skills},
 	{
 		id: PORTFOLIO,
