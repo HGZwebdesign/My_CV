@@ -4,23 +4,40 @@ import {sections} from 'config/sections'
 import {BOLD, Text, XL, XXL} from '../Components/Text'
 import {MAIN, ANTI, ACCENT, styled} from 'Styles'
 import {useMediaQuery} from 'plugins/MediaQuery'
+import {VIOLET2} from '../styles'
 
-const UnderLineBox = styled(Box)`
-	border-bottom: solid 5px ${ACCENT};
+const TextUnderlined = styled(Text)`
+	position: relative;
+
+	::after {
+		content: '';
+		position: absolute;
+		top: calc(100% + 0.2rem);
+		left: 0;
+		height: 3px;
+		width: 100%;
+		background-color: ${VIOLET2};
+		${p => p.theme.shadow1};
+	}
 `
 
 export const SectionBox = ({children, id, ...props}) => (
 	<Box {...{id, as: 'section', padding: '0 1rem', ...props}}>{children}</Box>
 )
 
-export const SecTitle = ({label, ...props}) => {
+export const SecTitle = ({label}) => {
 	const {isPhone} = useMediaQuery()
 	return (
-		<UnderLineBox inline {...props}>
-			<Text sets={[isPhone ? XL : XXL, BOLD]} upperCase>
-				{label}
-			</Text>
-		</UnderLineBox>
+		<TextUnderlined
+			{...{
+				sets: [isPhone ? XL : XXL, BOLD],
+				upperCase: true,
+				as: Box,
+				inline: true,
+			}}
+		>
+			{label}
+		</TextUnderlined>
 	)
 }
 
