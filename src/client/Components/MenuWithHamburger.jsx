@@ -95,7 +95,6 @@ const ListItem = ({id, label, sections, onClose}) => {
 				as: 'li',
 				column: true,
 				left: true,
-				padding: isPhone && '0 0 0 0.5rem',
 				inline: !isPhone,
 			}}
 		>
