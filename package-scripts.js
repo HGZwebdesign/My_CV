@@ -28,7 +28,7 @@ module.exports = {
 			inspect: `${DEBUG_ALL} ${PROD} node --inspect ${serverPath}`,
 		},
 		dev: {
-			default: concurrent.nps('server', 'client'),
+			default: `nps client`,
 			verbose: concurrent.nps('server.verbose', 'client'),
 		},
 		build: `${PROD} webpack --mode production`,
