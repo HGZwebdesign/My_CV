@@ -8,6 +8,7 @@ import {skillsDB} from 'config/sections'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import ImageBox from '../Components/ImageBox'
 import bgImage from 'assets/images/laptop1.min.jpg'
+import {ParallaxBanner} from 'react-scroll-parallax'
 
 const ImgBox = styled(ImageBox)`
 	position: absolute;
@@ -24,6 +25,21 @@ const ImgBox = styled(ImageBox)`
 			background-position-x: -50rem;
 		`}
 `
+
+const ImgBoxInParallax = props => {
+	const {isPhone, isTablet} = useMediaQuery()
+	return (
+		<ParallaxBanner
+			disabled={isTablet}
+			style={{
+				position: 'absolute',
+				height: '100%',
+				top: 0,
+			}}
+			layers={[{amount: 0.1, children: <ImgBox {...{...props, isPhone}} />}]}
+		/>
+	)
+}
 
 const BarNarrow = styled(Box)`
 	position: relative;
@@ -89,7 +105,7 @@ const Skills = ({id, label}) => {
 			{...{id, relative: true, bg: VIOLET1_70, fg: ANTI, padding: '3rem 0'}}
 			top
 		>
-			<ImgBox {...{src: bgImage, isPhone}} />
+			<ImgBoxInParallax {...{src: bgImage, isPhone}} />
 			<NarrowContentBox
 				{...{
 					relative: true,
