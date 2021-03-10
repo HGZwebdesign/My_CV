@@ -19,3 +19,20 @@ export const makeDate = dateArr =>
 		.join('.')
 
 export const randomRange = (min, max) => Math.floor(Math.random() * max) + min
+
+export const makeId = (length, onlyLetters, onlyNumbers) => {
+	let result = ''
+	const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+	const numbers = '0123456789'
+	const characters = onlyLetters
+		? letters
+		: onlyNumbers
+		? numbers
+		: letters + numbers
+
+	const charactersLength = characters.length
+	for (let i = 0; i < length; i++) {
+		result += characters.charAt(Math.floor(Math.random() * charactersLength))
+	}
+	return result
+}
