@@ -1,45 +1,70 @@
 import React from 'react'
 import {NarrowContentBox} from 'Components/Box'
-import {MAIN, VIOLET3_20, VIOLET2_20, VIOLET2, styled} from '../styles'
+import {ANTI, VIOLET3_20, VIOLET3, styled, VIOLET1_70, css} from '../styles'
 import {SectionBox, SecTitle} from '../Pages/Main'
-import {BOLD, L, MAIN_COL, S, Text} from '../Components/Text'
+import {BOLD, L, S, Text} from '../Components/Text'
 import Box from '../Components/Box/Box'
 import {skillsDB} from 'config/sections'
 import {useMediaQuery} from 'plugins/MediaQuery'
+import ImageBox from '../Components/ImageBox'
+import bgImage from 'assets/images/laptop1.min.jpg'
 
-const Dot = styled(Box)`
-	width: ${p => p.size || '1.5rem'};
-	height: ${p => p.size || '1.5rem'};
+const ImgBox = styled(ImageBox)`
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	mix-blend-mode: multiply;
+	filter: opacity(0.3) grayscale(1);
 
-	${p => p.theme.radius1111};
-	${p => p.theme.shadow1};
+	${p =>
+		p.isPhone &&
+		css`
+			background-position-x: -50rem;
+		`}
+`
+
+const BarNarrow = styled(Box)`
+	position: relative;
+	height: ${p => p.height};
+	background-color: ${VIOLET3};
+
+	::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: ${p => p.height};
+		width: calc(${p => p.score} / 6 * 100%);
+		background-color: ${VIOLET3_20};
+	}
 `
 
 const Skill = ({label, score}) => (
 	<Box key={label} column left gap="0.5rem">
-		<Text sets={[S, BOLD, MAIN_COL]} uppercase>
-			{label}
-		</Text>
-		<Box gap="0.5rem" left>
-			{[...new Array(6)].map((_, i) => (
-				<Dot key={i} {...{bg: i < score ? VIOLET2 : VIOLET2_20}} />
-			))}
-		</Box>
+		<Text sets={[S]}>{label}</Text>
+		<BarNarrow {...{score, height: '0.2rem', shadow: 2}} />
 	</Box>
 )
 
+const Grid = styled(Box)`
+	display: grid;
+	grid-gap: 4rem;
+	grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+`
+
 const SkillsGroups = ({groups}) => {
-	const {isPhone} = useMediaQuery()
 	return (
-		<Box gap="4rem" top left={!isPhone} column={isPhone}>
+		<Grid top>
 			{groups.map((arr, i) => (
-				<Box key={i} column left top gap inline>
+				<Box key={i} column left top gap>
 					{arr.map(({label, score}) => (
 						<Skill key={label} {...{label, score}} />
 					))}
 				</Box>
 			))}
-		</Box>
+		</Grid>
 	)
 }
 
@@ -60,11 +85,16 @@ const SkillsPanel = ({skills}) => {
 const Skills = ({id, label}) => {
 	const {isPhone} = useMediaQuery()
 	return (
-		<SectionBox {...{bg: VIOLET3_20, fg: MAIN, id, top: true}}>
+		<SectionBox
+			{...{id, relative: true, bg: VIOLET1_70, fg: ANTI, padding: '3rem 0'}}
+			top
+		>
+			<ImgBox {...{src: bgImage, isPhone}} />
 			<NarrowContentBox
 				{...{
+					relative: true,
 					top: true,
-					padding: isPhone ? '3rem 0' : '4rem 0',
+					padding: isPhone ? '3rem 1rem' : '4rem 1rem',
 					column: true,
 					left: true,
 					gap: '1rem',
