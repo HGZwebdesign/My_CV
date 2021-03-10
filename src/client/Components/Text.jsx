@@ -24,7 +24,12 @@ export const Text = styled.span`
 	${p => p.theme.text?.css};
 	${p => p.sets?.map(set => p.theme.text?.[set])}
 
+	${p => p.left && `text-align: left`};
+	${p => p.center && `text-align: center`};
+	${p => p.right && `text-align: right`};
+
 	${p => p.upperCase && `text-transform: uppercase`};
+
 	${p => p.cursor && `cursor: pointer`};
 
 	transition: 0.5s;
