@@ -1,57 +1,72 @@
 import React from 'react'
-import {MAIN, WHITE} from '../styles'
+import {ANTI, MAIN, styled, WHITE} from '../styles'
 import {SectionBox, SecTitle} from '../Pages/Main'
 import {ContentBox, Box} from '../Components/Box'
-import {BOLD, LINK, M, MAIN_COL, Text} from '../Components/Text'
+import {VIOLET1_COL, BOLD, LINK, M, Text} from '../Components/Text'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import {GITHUB} from 'config/personal'
+import CircleBox from '../Components/Circle'
+import {DATA_SCROLL_OFFSET} from '../Components/ScrollLink'
+
+const CircleWrap = styled(Box)`
+	position: absolute;
+	top: calc(${p => p.size} / -1.5);
+	right: 0;
+	width: ${p => p.size};
+`
+
+const Circle = ({children, size}) => {
+	return (
+		<CircleWrap {...{size}}>
+			<CircleBox {...{size, shapeProps: {bg: ANTI, shadow: 2}}}>
+				{children}
+			</CircleBox>
+		</CircleWrap>
+	)
+}
+
+const Content = ({label}) => {
+	const {isPhone} = useMediaQuery()
+	return (
+		<Box column gap="2rem">
+			<SecTitle {...{label}} />
+			<Box gap="0.5rem">
+				<Text sets={[M]} center={!isPhone}>
+					<Text>Please visit my GitHub account: </Text>
+					<Text
+						sets={[LINK, VIOLET1_COL, BOLD]}
+						as="a"
+						href={GITHUB}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						HGZdev
+					</Text>
+				</Text>{' '}
+			</Box>
+		</Box>
+	)
+}
 
 const Portfolio = ({id, label}) => {
 	const {isPhone} = useMediaQuery()
 	return (
-		<SectionBox {...{bg: WHITE, fg: MAIN, id}}>
+		<SectionBox
+			{...{id, [DATA_SCROLL_OFFSET]: !isPhone && -300, bg: WHITE, fg: MAIN}}
+		>
 			<ContentBox
-				{...{
-					padding: isPhone ? '3rem 0' : '4rem 0',
-					top: true,
-					gap: '1rem',
-					column: true,
-				}}
+				gap
+				top
+				column
+				relative
+				{...{padding: isPhone ? '3rem 0' : '0'}}
 			>
-				<Box padding="0 0 2rem">
-					<SecTitle {...{label}} />
-				</Box>
-				{/* TODO: In progress */}
-				{/* <Box wrap gap="3rem">
-					{projectsDB?.map(({src, label, link}) => (
-						<Text
-							key={label}
-							sets={[LINK]}
-							as="a"
-							href={link}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<ImageBox shadow={2} size={isPhone ? '80vw' : '20vw'} src={src}>
-								<Text sets={[M, BOLD, MAIN_COL]}> {label}</Text>
-							</ImageBox>
-						</Text>
-					))}
-				</Box> */}
-				<Box padding="2rem 0" gap="0.5rem">
-					<Text>
-						<Text sets={[M]}>Please check my GitHub account:</Text>{' '}
-						<Text
-							sets={[LINK]}
-							as="a"
-							href={GITHUB}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							HGZdev
-						</Text>
-					</Text>
-				</Box>
+				{isPhone && <Content {...{label}} />}
+				{!isPhone && (
+					<Circle {...{size: '18rem'}}>
+						<Content {...{label}} />
+					</Circle>
+				)}
 			</ContentBox>
 		</SectionBox>
 	)
