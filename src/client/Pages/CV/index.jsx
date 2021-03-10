@@ -30,7 +30,8 @@ const CVPanel = ({cvRef}) => {
 				ref: cvRef,
 				bg: WHITE,
 				padding: '1rem',
-				height: '29.6cm',
+				height: '293mm',
+				width: '210mm',
 			}}
 			top
 		>
@@ -42,7 +43,7 @@ const CVPanel = ({cvRef}) => {
 
 const Buttons = ({handlePrint}) => {
 	return (
-		<Box {...{padding: '1rem 1rem'}} top left gap>
+		<Box {...{padding: '1rem'}} top gap>
 			<Link {...{as: Link, to: '/'}}>
 				<BlueButton>Go to full CV page</BlueButton>
 			</Link>

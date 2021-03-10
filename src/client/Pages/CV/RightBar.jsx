@@ -67,7 +67,7 @@ const Card = ({
 
 const RightList = ({title, items}) => {
 	return (
-		<Box {...{gap: '0.5rem'}} column>
+		<Box {...{gap: '0.3rem'}} column>
 			<RightTitle {...{title}} />
 			<Box gap="0.5rem" column>
 				{items.map((job, i) => (
@@ -100,7 +100,7 @@ const Consent = () => {
 const RightBar = () => {
 	return (
 		<Box
-			{...{bg: WHITE, fg: CV_DARK, padding: '0 1rem', height: '100%'}}
+			{...{bg: WHITE, fg: CV_DARK, padding: '0 0 0 1rem', height: '100%'}}
 			column
 			spaceBetween
 		>
