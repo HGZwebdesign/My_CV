@@ -2,7 +2,7 @@
 
 **Link:** https://hgzdev.github.io/cv
 
-My introduction website containing CV and portfolio.
+My introduction website.
 
 ## Technologies used in this project:
 
@@ -10,5 +10,4 @@ My introduction website containing CV and portfolio.
 - Styled Components
 - JavaScript (ES6)
 - React.js
-- Node.js (express.js)
 - Webpack
