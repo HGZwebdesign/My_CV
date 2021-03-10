@@ -247,6 +247,7 @@ export const defaultAppBoxTheme = {
 		${p => p.theme.radiusCss};
 		${p => p.theme.shadowCss};
 		${p => p.cursor && `cursor: pointer;`};
+		${p => p.zIndex && `z-index: ${p.zIndex};`};
 	`,
 }
 
