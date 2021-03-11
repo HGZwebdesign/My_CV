@@ -8,6 +8,7 @@ import {MetaData} from './Components/MetaData'
 import {pages, PRINTABLE_PATH} from './settings'
 import CV from './Pages/CV'
 import ScrollToTop from './Components/ScrollToTop'
+import ErrorPage from './Components/ErrorPage'
 
 const App = () => {
 	return (
@@ -20,9 +21,12 @@ const App = () => {
 					<Switch>
 						<Route path={`/${PRINTABLE_PATH}`} component={CV} />
 						<PageWrap header={<Header />} footer={<Footer />}>
-							{pages.map(({path, exact, component}, i) => (
-								<Route key={i} {...{exact, path: `/${path}`, component}} />
-							))}
+							<Switch>
+								{pages.map(({path, exact, component}, i) => (
+									<Route key={i} {...{exact, path: `/${path}`, component}} />
+								))}
+								<Route component={ErrorPage} />
+							</Switch>
 						</PageWrap>
 					</Switch>
 				</HashRouter>
