@@ -12,6 +12,7 @@ import {useMediaQuery} from 'plugins/MediaQuery'
 import styled from 'styled-components'
 import ImageBox from 'src/client/Components/ImageBox'
 import cvPreview from 'assets/images/cv-preview.png'
+import {CV_FILE_PATH} from 'config'
 import ScrollToTop from 'src/client/Components/ScrollToTop'
 
 const ImgBox = styled(ImageBox)`
@@ -48,7 +49,10 @@ const Buttons = ({handlePrint}) => {
 			<Link {...{as: Link, to: '/'}}>
 				<BlueButton>Go to full CV page</BlueButton>
 			</Link>
-			<VioletButton {...{onClick: handlePrint, sets: [M]}}>Print</VioletButton>
+			<Box {...{as: 'a', href: CV_FILE_PATH}} inline>
+				<VioletButton {...{sets: [M]}}>Download .pdf</VioletButton>
+			</Box>
+			<VioletButton {...{sets: [M], onClick: handlePrint}}>Print</VioletButton>
 		</Box>
 	)
 }

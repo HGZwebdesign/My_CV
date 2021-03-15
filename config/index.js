@@ -11,3 +11,5 @@ export const LOCAL_URL = 'http://localhost'
 export const APP_ICON_PATH = './assets/favicon.ico'
 export const APP_NAME = 'Hanna Gaudasińska-Zapaśnik - CV'
 export const APP_DESC = `My Curriculum Vitae`
+export const CV_FILE_PATH =
+	'assets/docs/Gaudasińska-Zapaśnik%20Hanna%20-%20CV.pdf'
