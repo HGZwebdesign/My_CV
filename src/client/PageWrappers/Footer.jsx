@@ -4,11 +4,8 @@ import {Box, ContentBox} from 'Components/Box'
 import {useMediaQuery} from 'plugins/MediaQuery'
 import {S, Text} from '../Components/Text'
 import styled from 'styled-components'
-import email from 'assets/icons/email.svg'
-import linkedin from 'assets/icons/linkedin.svg'
-import github from 'assets/icons/github.svg'
-import phone from 'assets/icons/phone.svg'
 import {EMAIL, GITHUB, LINKEDIN, TEL} from 'config/personal'
+import {glyphs} from '../Components/Icon'
 
 const SvgImg = styled.img`
 	height: ${p => `${p.height || p.size}`};
@@ -60,7 +57,7 @@ const LinkBox = ({src, size = '2rem', href, showBanner}) => {
 
 const Footer = () => {
 	const {isPhone} = useMediaQuery()
-
+	const {github, phone, linkedin, email} = glyphs
 	return (
 		<Box {...{id: 'footer', bg: MAIN, fg: ANTI, shadow: 22}}>
 			<ContentBox {...{padding: '1rem', column: isPhone, gap: true}}>
