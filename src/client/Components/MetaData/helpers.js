@@ -75,6 +75,11 @@ export const makeMetaTagsByTag = ({
 		link: [
 			{rel: 'apple-touch-icon-precomposed', href: appIcon},
 			{rel: 'icon', href: appIcon},
+			{
+				rel: 'stylesheet',
+				href:
+					'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"',
+			},
 		],
 	}
 }

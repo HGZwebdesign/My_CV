@@ -1,3 +1,4 @@
+import React from 'react'
 import {Box} from 'Components/Box'
 import {styled} from 'Styles'
 
@@ -25,3 +26,17 @@ export const IconBox = styled(Box).attrs({cursor: true})`
 
 // const Icon = ({Svg, ...p}) => <IconBase {...p}>{/* <Svg /> */}</IconBase>
 
+const MDWrap = styled.span`
+	height: ${p => `${p.height || p.size || 'auto'}`};
+	width: ${p => `${p.width || p.size || 'auto'}`};
+
+	.material-icons {
+		font-size: ${p => `${p.fontSize}`};
+	}
+`
+
+export const MDIcon = ({children, icon, ...p}) => (
+	<MDWrap {...p}>
+		<span {...{className: 'material-icons'}}>{icon}</span>
+	</MDWrap>
+)

@@ -14,6 +14,7 @@ import ImageBox from 'src/client/Components/ImageBox'
 import cvPreview from 'assets/images/cv-preview.png'
 import {CV_FILE_PATH} from 'config'
 import ScrollToTop from 'src/client/Components/ScrollToTop'
+import {MDIcon} from 'src/client/Components/Icon'
 
 const ImgBox = styled(ImageBox)`
 	width: 87%;
@@ -50,9 +51,13 @@ const Buttons = ({handlePrint}) => {
 				<BlueButton>Go to full CV page</BlueButton>
 			</Link>
 			<Box {...{as: 'a', href: CV_FILE_PATH}} inline>
-				<VioletButton {...{sets: [M]}}>Download .pdf</VioletButton>
+				<VioletButton>
+					<MDIcon {...{fontSize: '1rem', icon: 'get_app'}} />
+				</VioletButton>
 			</Box>
-			<VioletButton {...{sets: [M], onClick: handlePrint}}>Print</VioletButton>
+			<VioletButton {...{padding: '1rem', onClick: handlePrint}}>
+				<MDIcon {...{fontSize: '1rem', icon: 'print'}} />
+			</VioletButton>
 		</Box>
 	)
 }
