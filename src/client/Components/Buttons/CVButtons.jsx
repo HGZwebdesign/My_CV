@@ -1,21 +1,34 @@
 import React from 'react'
 import {BLUE1, BLUE1_70, VIOLET1, VIOLET1_70, WHITE} from 'src/client/styles'
 import {Box} from '../Box'
+import {Text} from '../Text'
 
-export const CVButton = ({children, label, disabled, ...props}) => (
+export const CVButton = ({
+	children,
+	label,
+	sets,
+	disabled,
+	to,
+	href,
+	onClick,
+	...props
+}) => (
 	<Box
 		{...{
 			type: 'button',
 			inline: true,
 			padding: '0.3rem 0.5rem',
 			cursor: !disabled,
-			as: 'button',
+			as: (to || href || onClick) && 'button',
 			radius: '1111',
 			disabled,
+			to,
+			href,
+			onClick,
 			...props,
 		}}
 	>
-		{children || label}
+		{sets ? <Text {...{sets}}>{children || label}</Text> : children || label}
 	</Box>
 )
 
