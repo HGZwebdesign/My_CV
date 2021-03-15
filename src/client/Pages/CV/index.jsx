@@ -12,6 +12,7 @@ import {useMediaQuery} from 'plugins/MediaQuery'
 import styled from 'styled-components'
 import ImageBox from 'src/client/Components/ImageBox'
 import cvPreview from 'assets/images/cv-preview.png'
+import ScrollToTop from 'src/client/Components/ScrollToTop'
 
 const ImgBox = styled(ImageBox)`
 	width: 87%;
@@ -63,6 +64,7 @@ const CV = () => {
 		<Box
 			{...{bg: CV_LIGHT, top: true, padding: '0 0 1rem', minHeight: '100vh'}}
 		>
+			<ScrollToTop />
 			<Theme theme={CVTextTheme}>
 				<Box top column {...{width: '21cm'}}>
 					<Buttons {...{handlePrint}} />

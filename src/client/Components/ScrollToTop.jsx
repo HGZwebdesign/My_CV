@@ -1,18 +1,11 @@
-import React, {useEffect} from 'react'
-import PropTypes from 'prop-types'
-import {useLocation, useHistory, Route} from 'react-router-dom'
+import {useEffect} from 'react'
 
-const ScrollToTop = props => {
+const ScrollToTop = () => {
 	useEffect(() => {
-		window.addEventListener('beforeunload', () => {
-			window.scrollTo(0, 0)
-		})
+		window.scrollTo(0, 0)
 	}, [])
 
-	return <Route {...props} />
-}
-ScrollToTop.propTypes = {
-	targetId: PropTypes.string,
+	return true
 }
 
 export default ScrollToTop
