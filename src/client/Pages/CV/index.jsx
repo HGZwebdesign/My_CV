@@ -12,12 +12,19 @@ import {useMediaQuery} from 'plugins/MediaQuery'
 import styled from 'styled-components'
 import ImageBox from 'src/client/Components/ImageBox'
 import cvPreview from 'assets/images/cv-preview.png'
+import {CV_FILE_PATH} from 'config'
 import ScrollToTop from 'src/client/Components/ScrollToTop'
+import {glyphs} from 'src/client/Components/Icon'
 
 const ImgBox = styled(ImageBox)`
 	width: 87%;
 	padding-top: 127%;
 	filter: blur(3px);
+`
+
+const SvgImg = styled.img`
+	height: ${p => `${p.height || p.size}`};
+	width: ${p => `${p.width || p.size}`};
 `
 
 const WrapBox = styled(Box)`
@@ -43,12 +50,20 @@ const CVPanel = ({cvRef}) => {
 }
 
 const Buttons = ({handlePrint}) => {
+	const {isPhone} = useMediaQuery()
 	return (
-		<Box {...{padding: '1rem'}} top gap>
+		<Box {...{padding: '1rem'}} top gap left={!isPhone}>
 			<Link {...{as: Link, to: '/'}}>
-				<BlueButton>Go to full CV page</BlueButton>
+				<BlueButton {...{sets: [M]}}>Go to full CV page</BlueButton>
 			</Link>
-			<VioletButton {...{onClick: handlePrint, sets: [M]}}>Print</VioletButton>
+			<Box {...{as: 'a', href: CV_FILE_PATH}} inline>
+				<VioletButton>
+					<SvgImg {...{src: glyphs.download, size: '1rem'}} />
+				</VioletButton>
+			</Box>
+			<VioletButton {...{onClick: handlePrint}}>
+				<SvgImg {...{src: glyphs.print2, size: '1rem'}} />
+			</VioletButton>
 		</Box>
 	)
 }
