@@ -29,7 +29,7 @@ export const sections = [
 
 export const aboutDB = [
 	"I am a software programmer with 3-years' professional experience, specializing in website development.",
-	"My field of expertise ranges from front-end to 'soft' back-end technologies. During my career I was involved in user-interfaces creation as well as client-server communication, databases architecture design and testing. Moreover my experience gained in the previous profession of a market researcher allows me to successfully play the role of a client liaison in the field of technological analysis of requirements, functionalities implementation and training.",
+	"My field of expertise ranges from front-end to 'soft' back-end technologies. During my career I was involved in user-interfaces creation as well as client-server communication, databases architecture design and testing. Moreover, my experience gained in the previous profession of a market researcher allows me to successfully play the role of a client liaison in the field of technological analysis of requirements, functionalities implementation and training.",
 	'Programming is one of my passions too, which confronts me with many interesting challenges everyday. Solving them gives me a lot of joy and satisfaction.',
 	'I am looking for job opportunities that will allow me to utilize my potential and broaden my skills and knowledge comprehensively, under the guidance of experienced mentors.',
 	'I kindly invite you to look at my GitHub portfolio.',
