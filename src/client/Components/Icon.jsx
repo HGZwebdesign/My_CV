@@ -9,6 +9,9 @@ export const glyphs = {
 	phone: require('assets/icons/phone.svg'),
 	linkedin: require('assets/icons/linkedin.svg'),
 	github: require('assets/icons/github.svg'),
+	handicraft: require('assets/icons/handicraft.svg'),
+	archeology: require('assets/icons/archeology.svg'),
+	travel: require('assets/icons/travel.svg'),
 }
 
 export const IconBox = styled(Box).attrs({cursor: true})`

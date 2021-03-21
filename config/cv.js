@@ -26,7 +26,7 @@ export const leftListDB = [
 	},
 	{
 		title: 'Additional skills',
-		inline: true,
+		labelOnTop: true,
 		items: {
 			'Graphics software': 'COREL Photo-Paint, Photoshop',
 			'Statistical software': 'SPSS, STATA, SAS Base, Atlas.ti',
@@ -35,8 +35,11 @@ export const leftListDB = [
 	},
 	{
 		title: 'Hobbies',
+		icons: true,
 		items: {
-			'': 'Historical linguistics, archeology and handicraft',
+			handicraft: 'handicraft',
+			archeology: 'archeology',
+			travel: 'travel',
 		},
 	},
 ]
