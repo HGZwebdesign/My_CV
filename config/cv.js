@@ -36,7 +36,7 @@ export const leftListDB = [
 	{
 		title: 'Hobbies',
 		items: {
-			'': 'Historical linguistics, archeology and handicraft',
+			'': 'Handicraft, archeology and backpacking',
 		},
 	},
 ]
